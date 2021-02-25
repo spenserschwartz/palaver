@@ -1,0 +1,50 @@
+.introMessageForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .generatedMessage {
+  width: 500px;
+  min-height: 100px;
+  word-wrap: break-word;
+  word-break: normal;
+} */
+
+.inputRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /*vertical centering*/
+
+  width: 800px;
+}
+
+.inputLabel {
+  width: 50%;
+}
+
+.smallInput {
+  width: 50%;
+  height: 30px;
+}
+
+.generateButton {
+  width: 200px;
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 2em;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  background-color: #4eb5f1;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.generateButton:hover {
+  background-color: #4095c6;
+}
