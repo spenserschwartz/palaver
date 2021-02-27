@@ -1,5 +1,5 @@
-import ButtonField from './ButtonField';
+import LocalStorageField from './LocalStorageField';
 import InputField from './InputField';
 import ResultsField from './ResultsField';
 
-export {ButtonField, InputField, ResultsField}
+export {LocalStorageField, InputField, ResultsField}

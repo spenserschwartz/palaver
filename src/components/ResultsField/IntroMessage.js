@@ -19,7 +19,7 @@ const IntroMessage = ({ inputObject }) => {
     const generateIntroMessage = async() => {
       try {
         const response = await inputObject;
-        console.log('This is response: ', response);
+        //console.log('This is response: ', response);
         if (inputObject.personName) {
           setMessage(template1);
           setMessage2(template2);

@@ -13,7 +13,7 @@ const CoverLetter = ({ inputObject }) => {
     const generateCoverLetter = async() => {
       try {
         const response = await inputObject;
-        console.log('This is CV Response: ', response);
+        //console.log('This is CV Response: ', response);
         if (inputObject.personName) setMessage(template)
       } catch (error) {
         console.log(error);

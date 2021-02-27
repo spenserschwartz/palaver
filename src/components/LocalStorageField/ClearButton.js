@@ -3,7 +3,7 @@
 const ClearButton = () => {
 
   const clearLocalStorage =() => {
-    localStorage.clear();
+    if (window.confirm("Are you sure?")) localStorage.clear();
   }
 
   return (

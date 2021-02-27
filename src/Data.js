@@ -1,5 +1,5 @@
 const fetchLocalStorage = () => {
-  let data = localStorage.getItem('Palaver');
+   let data = localStorage.getItem('Palaver');
   return data ? data : {};
 }
 

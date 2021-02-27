@@ -1,22 +1,21 @@
 import React, {useState} from 'react';
 import './App.css';
 
-import {ButtonField, InputField, ResultsField} from './components'
+import {LocalStorageField, InputField, ResultsField} from './components'
 
-import fetchLocalStorage from './Data';   // Fetch local storage
+//import fetchLocalStorage from './Data';   // Fetch local storage
 import {inputObjectTemplate, introMessageTemplate1} from './helpers'
 
 
 function App() {
-  const [palaverObject, setPalaverObject] = useState(fetchLocalStorage());
+  //const [palaverObject, setPalaverObject] = useState(fetchLocalStorage());
 
 
-  const [inputObject, setInputObject] = useState(inputObjectTemplate)
+  const [inputObject, setInputObject] = useState(inputObjectTemplate);
 
   return (
     <div className="App">
-      <ButtonField 
-        palaverObject={palaverObject} setPalaverObject={setPalaverObject}
+      <LocalStorageField inputObject={inputObject} setInputObject={setInputObject}
       />
 
       <InputField inputObject={inputObject} setInputObject={setInputObject} />

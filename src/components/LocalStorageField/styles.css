@@ -1,0 +1,15 @@
+.localStorageDisplay {
+  display: flex;
+  flex-direction: row;
+}
+
+.localStorageTextBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.localStorageText {
+  height: 100px;
+  width: 300px;
+}
