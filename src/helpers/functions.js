@@ -17,4 +17,10 @@ const displayName = name => {
   return newName;
 }
 
-export {copyText, displayName}
+const fetchLocalStorage = () => {
+  let data = localStorage.getItem('Palaver');
+ return data ? data : {};
+}
+
+
+export {copyText, displayName, fetchLocalStorage}

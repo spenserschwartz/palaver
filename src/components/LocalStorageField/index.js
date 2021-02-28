@@ -2,7 +2,8 @@ import '../styles.css'
 import ClearButton from './ClearButton';
 import SaveButton from './SaveButton';
 import LocalStorageDisplay from './LocalStorageDisplay';
-import fetchLocalStorage from '../../Data';
+//import fetchLocalStorage from '../../Data';
+import fetchLocalStorage from '../../helpers/functions'
 
 const LocalStorageField = ({inputObject, setInputObject}) => {
   const localObject = JSON.parse(fetchLocalStorage());
