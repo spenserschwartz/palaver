@@ -4,7 +4,7 @@ import LocalStorageTextBox from './LocalStorageTextBox';
 import { inputObjectTemplate } from '../../helpers';
 
 const LocalStorageDisplay = ({localObject}) => {
-  //console.log('This is localObject: ', localObject)
+  console.log('localObject in LocalStorageDisplay: ', localObject)
   //const object = {coffeeZ: 'cup', chicken: 'eggsf', number: 33}
   // localStorage.setItem('Palaver', JSON.stringify(object));
 

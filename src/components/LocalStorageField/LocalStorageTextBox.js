@@ -8,7 +8,7 @@ const LocalStorageTextBox = ({localStorageObjectKey, localStorageObject}) => {
     <div className="localStorageTextBox">
       <h3>{displayName(localStorageObjectKey)}</h3>
       <textarea 
-        className="localStorageText"
+        className={`localStorageText ${localStorageObjectKey === 'Personal In' ? 'personalIn' : ''}`}
         value={localStorageObject[localStorageObjectKey]}
       />
     </div>
