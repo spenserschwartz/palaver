@@ -19,6 +19,7 @@ const displayName = name => {
 
 const fetchLocalStorage = () => {
   let data = localStorage.getItem('Palaver');
+  console.log('tt dat: ', data);
  return data ? data : {};
 }
 

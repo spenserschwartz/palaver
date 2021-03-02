@@ -2,8 +2,7 @@ import '../styles.css'
 import ClearButton from './ClearButton';
 import SaveButton from './SaveButton';
 import LocalStorageDisplay from './LocalStorageDisplay';
-//import fetchLocalStorage from '../../Data';
-import fetchLocalStorage from '../../helpers/functions'
+import {fetchLocalStorage} from '../../helpers/functions'
 
 const LocalStorageField = ({inputObject, setInputObject}) => {
   const localObject = JSON.parse(fetchLocalStorage());
@@ -13,6 +12,7 @@ const LocalStorageField = ({inputObject, setInputObject}) => {
   const fetchLocalStorage2 = () => {
     //console.table(JSON.parse(palaverObject));
   }
+
 
   return (
     <div className="buttonField">
