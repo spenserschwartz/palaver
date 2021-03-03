@@ -1,7 +1,5 @@
 import '../styles.css'
-import ClearButton from './ClearButton';
-import SaveButton from './SaveButton';
-import FetchLocalStorageButton from './FetchLocalStorageButton';
+import {ClearButton, SaveButton, FetchLocalStorageButton} from './buttons';
 import LocalStorageDisplay from './LocalStorageDisplay';
 import {fetchLocalStorage} from '../../helpers/functions'
 
