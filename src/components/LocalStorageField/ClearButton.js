@@ -1,18 +1,16 @@
-
+import React from 'react';
 
 const ClearButton = () => {
-
-  const clearLocalStorage =() => {
-    if (window.confirm("Are you sure you want to clear Local Storage?")) localStorage.clear();
-  }
+  const clearLocalStorage = () => {
+    if (window.confirm('Are you sure you want to clear Local Storage?'))
+      localStorage.clear();
+  };
 
   return (
     <div>
-      <button onClick={() => clearLocalStorage()}>
-        Clear Local Storage
-      </button>
+      <button onClick={() => clearLocalStorage()}>Clear Local Storage</button>
     </div>
-  )
-}
+  );
+};
 
 export default ClearButton;
