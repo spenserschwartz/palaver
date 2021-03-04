@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { LocalStorageField, InputField, ResultsField } from './components';
 import { inputObjectTemplate } from './helpers';
+import './App.css';
 
 function App() {
   const [inputObject, setInputObject] = useState(inputObjectTemplate);

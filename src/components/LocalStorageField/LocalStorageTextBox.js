@@ -1,18 +1,19 @@
-import React from 'react'
-import {displayName} from '../../helpers/functions'
-import './styles.css'
+import React from 'react';
+import { displayName } from '../../helpers/functions';
+import './styles.css';
 
-const LocalStorageTextBox = ({localStorageObjectKey, localStorageObject}) => {
-
+const LocalStorageTextBox = ({ localStorageObjectKey, localStorageObject }) => {
   return (
     <div className="localStorageTextBox">
       <h3>{displayName(localStorageObjectKey)}</h3>
-      <textarea 
-        className={`localStorageText ${localStorageObjectKey === 'Personal In' ? 'personalIn' : ''}`}
+      <textarea
+        className={`localStorageText ${
+          localStorageObjectKey === 'Personal In' ? 'personalIn' : ''
+        }`}
         value={localStorageObject[localStorageObjectKey]}
       />
     </div>
-  )
-}
+  );
+};
 
-export default LocalStorageTextBox
+export default LocalStorageTextBox;
