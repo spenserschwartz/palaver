@@ -6,7 +6,7 @@ import { inputObjectTemplate } from '../../helpers';
 const LocalStorageDisplay = ({localObject}) => {
   console.log('localObject in LocalStorageDisplay: ', localObject)
   //const object = {coffeeZ: 'cup', chicken: 'eggsf', number: 33}
-  // localStorage.setItem('Palaver', JSON.stringify(object));
+  // localStorage.setItem('Palaver', JSON.stringify(object))
 
   const localStorageObject = localObject.companyName ? localObject
                                                      : inputObjectTemplate;
