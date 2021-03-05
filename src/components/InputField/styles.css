@@ -28,6 +28,10 @@
   height: 30px;
 }
 
+.largeInput {
+  height: 60px;
+}
+
 .generateButton {
   width: 200px;
   display: inline-block;
