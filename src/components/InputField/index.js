@@ -1,18 +1,15 @@
-import React, {useState} from 'react'
-import './styles.css'
+import React from 'react';
+import './styles.css';
 
 import InputRow from './InputRow';
 
-
-const InputField = ({inputObject, setInputObject}) => {
-
+const InputField = ({ inputObject, setInputObject }) => {
   // const [inputObject, setInputObject] = useState({
   //   'companyName' : '',
   //   'jobTitle' : '',
   //   'personName': '',
   //   'personalIn' : ''
   // })
-
 
   const generate = (e) => {
     const newObject = Object.assign({}, inputObject);
@@ -21,7 +18,7 @@ const InputField = ({inputObject, setInputObject}) => {
       setInputObject(newObject);
     }
     e.preventDefault();
-  }
+  };
 
   return (
     <div className="inputField">
@@ -33,11 +30,14 @@ const InputField = ({inputObject, setInputObject}) => {
             <InputRow key={i} row={row} index={i} />
           ))}
         </div>
-        <input type="submit" className=" button generateButton" value="Generate" />
+        <input
+          type="submit"
+          className=" button generateButton"
+          value="Generate"
+        />
       </form>
-
     </div>
-  )
-}
+  );
+};
 
 export default InputField;
