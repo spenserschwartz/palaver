@@ -4,13 +4,6 @@ import './styles.css';
 import InputRow from './InputRow';
 
 const InputField = ({ inputObject, setInputObject }) => {
-  // const [inputObject, setInputObject] = useState({
-  //   'companyName' : '',
-  //   'jobTitle' : '',
-  //   'personName': '',
-  //   'personalIn' : ''
-  // })
-
   const generate = (e) => {
     const newObject = Object.assign({}, inputObject);
     for (let key in newObject) {
