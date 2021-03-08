@@ -6,7 +6,6 @@ const InputRow = ({ row, index }) => {
   const [input, setInput] = useState('');
 
   const inputProps = {};
-
   inputProps.required = row === 'personalIn' ? false : true;
   inputProps.className = row === 'personalIn' ? 'largeInput' : 'smallInput';
 
