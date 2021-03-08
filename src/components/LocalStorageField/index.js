@@ -5,7 +5,7 @@ import { fetchLocalStorage } from '../../helpers/functions';
 
 const LocalStorageField = ({ inputObject, setInputObject }) => {
   const localObject = JSON.parse(fetchLocalStorage());
-  // const object = {coffeeZ: 'cup', chicken: 'eggsf', number: 33}
+  const object = { coffeeZ: 'cup', chicken: 'eggsf', number: 33 };
   // localStorage.setItem('Palaver', JSON.stringify(object));\
 
   return (
