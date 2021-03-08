@@ -15,7 +15,7 @@ const InputRow = ({ row, index }) => {
       <textarea
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        id={row}
+        id={'input' + row}
         {...inputProps}
       />
     </div>

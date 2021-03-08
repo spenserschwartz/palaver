@@ -11,8 +11,7 @@ const IntroMessage = ({ inputObject }) => {
 
   const template1 = `Hey ${inputObject.personName}! I saw a ${inputObject.jobTitle} position open up with ${inputObject.companyName} and wanted to connect with you. I'd love to have a chat about if I'm a good fit. Cheers, Spenser`;
 
-  const template2 = `Hey ${inputObject.personName}! I saw a ${inputObject.jobTitle} position open up with ${inputObject.companyName} and wanted to connect with you. I'd love to hear about how you think about building user experiences with complex datasets. Do you have 15 minutes to talk this week or next? Cheers, Spenser
-  aasdfasdfadf`;
+  const template2 = `Hey ${inputObject.personName}! I saw a ${inputObject.jobTitle} position open up with ${inputObject.companyName} and wanted to connect with you. I'd love to hear about how you think about building user experiences with complex datasets. Do you have 15 minutes to talk this week or next? Cheers, Spenser`;
 
   useEffect(() => {
     const generateIntroMessage = async () => {
