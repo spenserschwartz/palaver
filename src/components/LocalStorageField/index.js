@@ -13,8 +13,8 @@ const LocalStorageField = ({ inputObject, setInputObject }) => {
       <h1>Local Storage Field</h1>
       <SaveButton />
       <ClearButton />
-
       <FetchLocalStorageButton />
+
       <LocalStorageDisplay localObject={localObject} />
     </div>
   );

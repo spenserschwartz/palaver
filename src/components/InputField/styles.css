@@ -29,7 +29,8 @@
 }
 
 .largeInput {
-  height: 60px;
+  width: 50%;
+  height: 90px;
 }
 
 .generateButton {

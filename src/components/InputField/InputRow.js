@@ -8,12 +8,12 @@ const InputRow = ({ row, index }) => {
   const inputProps = {};
 
   inputProps.required = row === 'personalIn' ? false : true;
+  inputProps.className = row === 'personalIn' ? 'largeInput' : 'smallInput';
 
   return (
     <div className="inputRow">
       <div className="inputLabel">{displayName(row)}</div>
       <textarea
-        className={row === 'personalIn' ? 'largeinput' : 'smallInput'}
         value={input}
         onChange={(e) => setInput(e.target.value)}
         id={row}
