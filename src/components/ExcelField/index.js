@@ -18,7 +18,7 @@ const createExcelFile = () => {
   const ws_data = [['hello', 'world']]; // A row with two columns
   const ws = xlsx.utils.aoa_to_sheet(ws_data); // Create the sheet from the ws_data array
   wb.Sheets['Test Sheet'] = ws; // Assign sheet object to the workbook Sheets array
-  xlsx.writeFile(wb, 'New Data Filex.xlsx');
+  xlsx.writeFile(wb, './newDataFile.xlsx');
 };
 
 const ExcelField = () => {
