@@ -24,3 +24,12 @@
 
   background-color: turquoise;
 }
+
+.excelField {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: lightskyblue;
+  width: 100%;
+}

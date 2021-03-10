@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { LocalStorageField, InputField, ResultsField } from './components';
+import {
+  LocalStorageField,
+  InputField,
+  ResultsField,
+  ExcelField,
+} from './components';
 import { inputObjectTemplate } from './helpers';
 import './App.css';
 
@@ -8,6 +13,7 @@ function App() {
 
   return (
     <div className="App">
+      <ExcelField />
       <LocalStorageField
         inputObject={inputObject}
         setInputObject={setInputObject}
