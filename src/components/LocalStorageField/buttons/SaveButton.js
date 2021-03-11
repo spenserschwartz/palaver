@@ -7,6 +7,7 @@ const SaveButton = () => {
     // setPalaverObject(localStorage.getItem('Palaver'));
     // console.table(JSON.parse(localStorage.getItem('Palaver')));
 
+    // Save the current text in the textboxes to localStorage
     const newObject = inputObjectTemplate;
     for (let key in newObject) {
       let inputTextID = 'lsTextBox' + key;
