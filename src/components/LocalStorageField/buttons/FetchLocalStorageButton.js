@@ -7,6 +7,12 @@ const FetchLocalStorageButton = () => {
 
     const localObject = fetchLocalStorage();
     console.log('LO from FetchButton: ', localObject);
+
+    const newObject = fetchLocalStorage();
+    for (let key in newObject) {
+      let inputTextID = 'lsTextBox' + key;
+      document.getElementById(inputTextID).value = newObject[key];
+    }
   };
 
   return (

@@ -6,16 +6,6 @@ import { inputObjectTemplate } from '../../helpers';
 import { fetchLocalStorage } from '../../helpers/functions';
 
 const LocalStorageField = ({ inputObject, setInputObject }) => {
-  //let localObject = JSON.parse(fetchLocalStorage());
-
-  // Check to match template. If Palaver key in localStorage does not have the template keys, localObject is reset to the template
-  // for (let key in inputObjectTemplate) {
-  //   if (!localObject[key]) {
-  //     localObject = Object.assign({}, inputObjectTemplate);
-  //     break;
-  //   }
-  // }
-
   const [localObject, setLocalObject] = useState(fetchLocalStorage());
   useEffect(() => {
     // Check to match template. If Palaver key in localStorage does NOT have template keys, reset localObject to template
