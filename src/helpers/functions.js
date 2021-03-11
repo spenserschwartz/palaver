@@ -17,9 +17,10 @@ const displayName = (name) => {
   return newName;
 };
 
+// Fetch Palaver key from localStorage and return a JSON parsed object (if it exists)
 const fetchLocalStorage = () => {
   let data = localStorage.getItem('Palaver');
-  return data ? data : {};
+  return data ? JSON.parse(data) : {};
 };
 
 export { copyText, displayName, fetchLocalStorage };
