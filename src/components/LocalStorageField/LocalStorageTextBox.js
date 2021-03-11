@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { displayName } from '../../helpers/functions';
 import './styles.css';
 
-const LocalStorageTextBox = ({ localStorageObjectKey, localStorageObject }) => {
+const LocalStorageTextBox = ({ localObjectKey, localObject }) => {
   const [input, updateInput] = useState('');
 
   // Async to display the current localStorage values in text box
   useEffect(() => {
-    updateInput(localStorageObject[localStorageObjectKey]);
-  }, [localStorageObject, localStorageObjectKey]);
+    updateInput(localObject[localObjectKey]);
+  }, [localObject, localObjectKey]);
 
   return (
     <div className="localStorageTextBox">
-      <h3>{displayName(localStorageObjectKey)}</h3>
+      <h3>{displayName(localObjectKey)}</h3>
       <textarea
         className="localStorageText"
         value={input}
