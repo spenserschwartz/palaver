@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { displayName } from '../../helpers/functions';
+import CopyButton from '../../helpers/components/CopyButton';
 import './styles.css';
 
 const LocalStorageTextBox = ({ localObjectKey, localObject }) => {
   const [input, updateInput] = useState('');
+  const textBoxID = 'localStorageTextBox' + localObjectKey;
 
   // Async to display the current localStorage values in text box
   useEffect(() => {
@@ -17,8 +19,9 @@ const LocalStorageTextBox = ({ localObjectKey, localObject }) => {
         className="localStorageText"
         value={input}
         onChange={(e) => updateInput(e.target.value)}
-        id={'lsTextBox' + localObjectKey}
+        id={textBoxID}
       />
+      <CopyButton copyID={textBoxID} />
     </div>
   );
 };
