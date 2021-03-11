@@ -17,6 +17,7 @@ const LocalStorageTextBox = ({ localObjectKey, localObject }) => {
         className="localStorageText"
         value={input}
         onChange={(e) => updateInput(e.target.value)}
+        id={'lsTextBox' + localObjectKey}
       />
     </div>
   );
