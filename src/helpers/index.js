@@ -1,7 +1,7 @@
 // import { inputObject } from '../App';
 
 const inputObjectTemplate = {
-  companyName: '',
+  companyName: 'hey hey',
   jobTitle: '',
   personName: '',
   personalIn: '',
