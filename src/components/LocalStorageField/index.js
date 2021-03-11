@@ -20,6 +20,7 @@ const LocalStorageField = ({ inputObject, setInputObject }) => {
     JSON.parse(fetchLocalStorage())
   );
   useEffect(() => {
+    // Check to match template. If Palaver key in localStorage does NOT have template keys, reset localObject to template
     for (let key in inputObjectTemplate) {
       if (!localObject[key]) {
         setLocalObject(inputObjectTemplate);
