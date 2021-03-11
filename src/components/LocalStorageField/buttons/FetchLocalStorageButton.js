@@ -5,7 +5,7 @@ const FetchLocalStorageButton = () => {
   const buttonClick = () => {
     console.log('Fetchy');
 
-    const localObject = JSON.parse(fetchLocalStorage());
+    const localObject = fetchLocalStorage();
     console.log('LO from FetchButton: ', localObject);
   };
 
