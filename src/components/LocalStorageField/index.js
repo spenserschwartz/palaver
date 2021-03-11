@@ -15,8 +15,8 @@ const LocalStorageField = ({ inputObject, setInputObject }) => {
     }
   }
 
-  // const object = { coffeeZ: 'cup', chicken: 'eggsf', number: 33 };
-  // localStorage.setItem('Palaver', JSON.stringify(object));\
+  const object = { coffeeZ: 'cup', chicken: 'eggsf', number: 33 };
+  localStorage.setItem('Palaver', JSON.stringify(object));
 
   return (
     <div className="buttonField">
