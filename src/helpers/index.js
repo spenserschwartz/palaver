@@ -7,6 +7,12 @@ const inputObjectTemplate = {
   personalIn: '',
 };
 
+const localStorageObjectTemplate = {
+  personalIn: '',
+  additionalStorage: '',
+  moreStorage: '',
+};
+
 const introMessageTemplate1 = 'Hey Gonzo';
 
 //  const tempy = async () => {
@@ -23,4 +29,8 @@ const introMessageTemplate1 = 'Hey Gonzo';
 
 //console.log('hh', inputObject);
 
-export { inputObjectTemplate, introMessageTemplate1 };
+export {
+  inputObjectTemplate,
+  localStorageObjectTemplate,
+  introMessageTemplate1,
+};

@@ -2,18 +2,28 @@ import React, { useState, useEffect } from 'react';
 import '../styles.css';
 import { ClearButton, SaveButton, FetchLocalStorageButton } from './buttons';
 import LocalStorageDisplay from './LocalStorageDisplay';
-import { inputObjectTemplate } from '../../helpers';
+import { inputObjectTemplate, localStorageObjectTemplate } from '../../helpers';
 import { fetchLocalStorage } from '../../helpers/functions';
 
 const LocalStorageField = ({ inputObject, setInputObject }) => {
   const [localObject, setLocalObject] = useState(fetchLocalStorage());
   const [localStorageDisplay, setLocalStorageDisplay] = useState(false);
 
+  // useEffect(() => {
+  //   // Check to match template. If Palaver key in localStorage does NOT have template keys, reset localObject to template
+  //   for (let key in inputObjectTemplate) {
+  //     if (!localObject[key]) {
+  //       setLocalObject(inputObjectTemplate);
+  //       break;
+  //     }
+  //   }
+  // }, [localObject]);
+
   useEffect(() => {
     // Check to match template. If Palaver key in localStorage does NOT have template keys, reset localObject to template
-    for (let key in inputObjectTemplate) {
+    for (let key in localStorageObjectTemplate) {
       if (!localObject[key]) {
-        setLocalObject(inputObjectTemplate);
+        setLocalObject(localStorageObjectTemplate);
         break;
       }
     }
