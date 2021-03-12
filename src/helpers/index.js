@@ -15,11 +15,6 @@ const localStorageObjectTemplate = {
 
 const introMessageTemplate1 = 'Hey Gonzo';
 
-//  const tempy = async () => {
-//    const response = await inputObject;
-//    return `Hey ${inputObject.personName}`
-//  }
-
 // const template =
 //   `Hi ${inputObject.companyName} - your ${inputObject.jobTitle} role caught my eye.\n\n` +
 //   (inputObject.personalIn ? inputObject.personalIn + '\n\n' : '') +
