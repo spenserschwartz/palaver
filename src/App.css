@@ -35,5 +35,6 @@ textarea {
 }
 
 .button:hover {
-  background-color: #4095c6;
+  /* background-color: #4095c6; */
+  filter: brightness(85%);
 }

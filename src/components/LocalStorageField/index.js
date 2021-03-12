@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../styles.css';
 import { ClearButton, SaveButton, FetchLocalStorageButton } from './buttons';
 import LocalStorageDisplay from './LocalStorageDisplay';
-import { inputObjectTemplate, localStorageObjectTemplate } from '../../helpers';
+import { localStorageObjectTemplate } from '../../helpers';
 import { fetchLocalStorage } from '../../helpers/functions';
 
 const LocalStorageField = ({ inputObject, setInputObject }) => {
