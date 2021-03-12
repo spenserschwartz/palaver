@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { displayName } from '../../helpers/functions';
 import CopyButton from '../../helpers/components/CopyButton';
 import './styles.css';
