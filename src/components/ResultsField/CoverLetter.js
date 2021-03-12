@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import CopyButton from '../../helpers/components/CopyButton';
 
 const CoverLetter = ({ inputObject }) => {
   const [message, setMessage] = useState('');
+  const textBoxID = 'coverLetterTextBox';
 
   const template =
     `Hi ${inputObject.companyName} - your ${inputObject.jobTitle} role caught my eye.\n\n` +
@@ -22,24 +24,23 @@ const CoverLetter = ({ inputObject }) => {
     generateCoverLetter();
   }, [inputObject, template]);
 
-  const copyText = () => {
-    let text = document.getElementById('myInput');
-    text.select();
-    document.execCommand('copy');
-    alert('Copied!');
-  };
+  // const copyText = () => {
+  //   let text = document.getElementById('myInput');
+  //   text.select();
+  //   document.execCommand('copy');
+  //   alert('Copied!');
+  // };
 
   return (
     <div>
       <h2>Cover Letter</h2>
-
+      <CopyButton copyID={textBoxID} />
       <textarea
         rows="20"
         className="generatedMessage"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        id="myInput"
-        onDoubleClick={() => copyText()}
+        id={textBoxID}
       />
     </div>
   );
