@@ -7,6 +7,8 @@ import { fetchLocalStorage } from '../../helpers/functions';
 
 const LocalStorageField = ({ inputObject, setInputObject }) => {
   const [localObject, setLocalObject] = useState(fetchLocalStorage());
+  const [localStorageDisplay, setLocalStorageDisplay] = useState(false);
+
   useEffect(() => {
     // Check to match template. If Palaver key in localStorage does NOT have template keys, reset localObject to template
     for (let key in inputObjectTemplate) {
@@ -25,9 +27,13 @@ const LocalStorageField = ({ inputObject, setInputObject }) => {
       <h1>Local Storage Field</h1>
       <SaveButton />
       <ClearButton />
-      <FetchLocalStorageButton />
+      <FetchLocalStorageButton
+        setLocalStorageDisplay={setLocalStorageDisplay}
+      />
 
-      <LocalStorageDisplay localObject={localObject} />
+      {localStorageDisplay ? (
+        <LocalStorageDisplay localObject={localObject} />
+      ) : null}
     </div>
   );
 };

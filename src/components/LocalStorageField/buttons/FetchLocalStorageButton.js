@@ -1,14 +1,14 @@
 import React from 'react';
 import { fetchLocalStorage } from '../../../helpers/functions';
 
-const FetchLocalStorageButton = () => {
-  const buttonClick = () => {
-    console.log('Fetchy');
+const FetchLocalStorageButton = ({ setLocalStorageDisplay }) => {
+  // Async to allow document.getElementById below to have a value
+  const buttonClick = async () => {
+    // Turn setLocalStorageDisplay to true to display LocalStorageDisplay
+    setLocalStorageDisplay(true);
 
-    const localObject = fetchLocalStorage();
-    console.log('LO from FetchButton: ', localObject);
-
-    const newObject = fetchLocalStorage();
+    // Fill in text boxes from localStorage values
+    const newObject = await fetchLocalStorage();
     for (let key in newObject) {
       let inputTextID = 'localStorageTextBox' + key;
       document.getElementById(inputTextID).value = newObject[key];

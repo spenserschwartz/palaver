@@ -24,13 +24,6 @@ const CoverLetter = ({ inputObject }) => {
     generateCoverLetter();
   }, [inputObject, template]);
 
-  // const copyText = () => {
-  //   let text = document.getElementById('myInput');
-  //   text.select();
-  //   document.execCommand('copy');
-  //   alert('Copied!');
-  // };
-
   return (
     <div>
       <h2>Cover Letter</h2>
