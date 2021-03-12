@@ -17,7 +17,9 @@ const FetchLocalStorageButton = ({ setLocalStorageDisplay }) => {
 
   return (
     <div>
-      <button onClick={() => buttonClick()}>Fetch Local Storage</button>
+      <button className="button" onClick={() => buttonClick()}>
+        Fetch Local Storage
+      </button>
     </div>
   );
 };
