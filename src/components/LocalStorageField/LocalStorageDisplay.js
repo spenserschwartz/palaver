@@ -4,10 +4,6 @@ import LocalStorageTextBox from './LocalStorageTextBox';
 //import { inputObjectTemplate } from '../../helpers';
 
 const LocalStorageDisplay = ({ localObject }) => {
-  // const localStorageObject = localObject.companyName
-  //   ? localObject
-  //   : inputObjectTemplate;
-
   return (
     <div>
       <h2>Local Storage Display</h2>
