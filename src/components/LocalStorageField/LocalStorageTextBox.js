@@ -8,11 +8,11 @@ const LocalStorageTextBox = ({ localObjectKey, localObject }) => {
   const textBoxID = 'localStorageTextBox' + localObjectKey;
   console.log('tbi: ', textBoxID);
 
-  // ! Only need to turn this on if we're going to always display the text boxes i.e. not have the display toggled by localStorageDisplay hook in LocalStorageField
   // Async to display the current localStorage values in text box
-  // useEffect(() => {
-  //   updateInput(localObject[localObjectKey]);
-  // }, [localObject, localObjectKey]);
+  // Also used to not refresh when Generate button is clicked
+  useEffect(() => {
+    updateInput(localObject[localObjectKey]);
+  }, [localObject, localObjectKey]);
 
   return (
     <div className="localStorageTextBox">

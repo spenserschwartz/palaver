@@ -7,7 +7,7 @@ const InputField = ({ inputObject, setInputObject }) => {
   const generate = (e) => {
     const newObject = Object.assign({}, inputObject);
     for (let key in newObject) {
-      let inputTextID = 'input' + key;
+      let inputTextID = 'inputTextBox' + key;
       newObject[key] = document.getElementById(inputTextID).value;
       setInputObject(newObject);
     }
