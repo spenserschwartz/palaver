@@ -5,7 +5,6 @@ const CopyButton = ({ copyID }) => {
     let text = document.getElementById(copyID);
     text.select();
     document.execCommand('copy');
-    alert('Copied!');
   };
 
   return (
