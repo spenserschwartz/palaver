@@ -1,4 +1,4 @@
-import { inputObjectTemplate } from '../../../helpers';
+import { localStorageObjectTemplate } from '../../../helpers';
 
 const SaveButton = () => {
   const savetoLocalStorage = () => {
@@ -8,8 +8,9 @@ const SaveButton = () => {
     // console.table(JSON.parse(localStorage.getItem('Palaver')));
 
     // Save the current text in the textboxes to localStorage
-    const newObject = inputObjectTemplate;
+    const newObject = localStorageObjectTemplate;
     for (let key in newObject) {
+      console.log('This is key: ', key);
       let inputTextID = 'localStorageTextBox' + key;
       newObject[key] = document.getElementById(inputTextID).value;
       localStorage.setItem('Palaver', JSON.stringify(newObject));

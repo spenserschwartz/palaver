@@ -12,7 +12,7 @@ const FetchLocalStorageButton = ({ setLocalStorageDisplay }) => {
     console.log('no: ', newObject);
     for (let key in newObject) {
       let inputTextID = 'localStorageTextBox' + key;
-      //document.getElementById(inputTextID).value = newObject[key];
+      document.getElementById(inputTextID).value = newObject[key];
     }
   };
 
