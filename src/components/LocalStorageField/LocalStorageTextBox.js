@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { displayName } from '../../helpers/functions';
 import CopyButton from '../../helpers/components/CopyButton';
 import './styles.css';
@@ -6,6 +6,7 @@ import './styles.css';
 const LocalStorageTextBox = ({ localObjectKey, localObject }) => {
   const [input, updateInput] = useState('');
   const textBoxID = 'localStorageTextBox' + localObjectKey;
+  console.log('tbi: ', textBoxID);
 
   // ! Only need to turn this on if we're going to always display the text boxes i.e. not have the display toggled by localStorageDisplay hook in LocalStorageField
   // Async to display the current localStorage values in text box

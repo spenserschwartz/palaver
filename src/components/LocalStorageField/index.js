@@ -23,7 +23,7 @@ const LocalStorageField = ({ inputObject, setInputObject }) => {
   // localStorage.setItem('Palaver', JSON.stringify(object));
 
   return (
-    <div className="buttonField">
+    <div className="localStorageField">
       <h1>Local Storage Field</h1>
       <SaveButton />
       <ClearButton />
