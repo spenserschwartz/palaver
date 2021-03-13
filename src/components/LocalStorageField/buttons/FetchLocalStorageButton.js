@@ -9,6 +9,7 @@ const FetchLocalStorageButton = ({ setLocalStorageDisplay }) => {
 
     // Fill in text boxes from localStorage values
     const newObject = await fetchLocalStorage();
+    console.log('no: ', newObject);
     for (let key in newObject) {
       let inputTextID = 'localStorageTextBox' + key;
       document.getElementById(inputTextID).value = newObject[key];

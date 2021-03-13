@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './styles.css';
 
 // import {introMessageTemplate1} from '../../helpers';
-import { copyText } from '../../helpers/functions';
+// import { copyText } from '../../helpers/functions';
+import CopyButton from '../../helpers/components/CopyButton';
 
 const IntroMessage = ({ inputObject }) => {
   const [message, setMessage] = useState('');
@@ -33,24 +34,27 @@ const IntroMessage = ({ inputObject }) => {
     <div className="introMessageContainer">
       <h2>IntroMessage</h2>
 
+      <CopyButton copyID="introMessage" />
       <textarea
         name="introMessage1"
         className="generatedMessage"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        id="myInput"
-        onClick={() => copyText()}
+        id="introMessage"
       />
 
       {toggle ? (
-        <textarea
-          name="introMessage2"
-          className="generatedMessage"
-          value={message2}
-          onChange={(e) => setMessage2(e.target.value)}
-          id="myInput"
-          rows={1}
-        />
+        <div className="introMessageContainer">
+          <CopyButton copyID="introMessage2" />
+          <textarea
+            name="introMessage2"
+            className="generatedMessage"
+            value={message2}
+            onChange={(e) => setMessage2(e.target.value)}
+            id="introMessage2"
+            rows={1}
+          />
+        </div>
       ) : (
         <input
           type="button"
