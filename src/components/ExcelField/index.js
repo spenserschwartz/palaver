@@ -18,14 +18,31 @@ const createExcelFile = () => {
   const ws_data = [['hello', 'world']]; // A row with two columns
   const ws = xlsx.utils.aoa_to_sheet(ws_data); // Create the sheet from the ws_data array
   wb.Sheets['Palaver'] = ws; // Assign sheet object to the workbook Sheets array
-  xlsx.writeFile(wb, 'PalaverDatabase.xlsx');
+  xlsx.writeFile(wb, 'createdTestFile.xlsx');
+};
+
+const saveToExcelFile = () => {};
+
+const convert = () => {
+  console.log('hey');
+  document.getElementById('input').addEventListener('change', (event) => {
+    console.log('This is event: ', event.target.files);
+  });
 };
 
 const ExcelField = () => {
   return (
     <div className="excelField">
       <h1>Excel Field</h1>
-      <button onClick={() => createExcelFile()}>Create Excel File</button>
+      <button className="button" onClick={() => createExcelFile()}>
+        Create Excel File
+      </button>
+      <button onClick={() => saveToExcelFile()}>Save to Excel File</button>
+      <h4>Convert Below</h4>
+      <input id="input" type="file" accept=".xls,.xlsx" />
+      <button id="button" onClick={() => convert()}>
+        Convert
+      </button>
     </div>
   );
 };
