@@ -1,9 +1,11 @@
 import React from 'react';
 import '../styles.css';
-
-const xlsx = require('xlsx');
 // https://www.youtube.com/watch?v=tKz_ryychBY
 // https://www.npmjs.com/package/xlsx
+
+import ConvertField from './ConvertField';
+
+const xlsx = require('xlsx');
 
 const createExcelFile = () => {
   const wb = xlsx.utils.book_new(); // Create a new workbook
@@ -23,13 +25,6 @@ const createExcelFile = () => {
 
 const saveToExcelFile = () => {};
 
-const convert = () => {
-  console.log('hey');
-  document.getElementById('input').addEventListener('change', (event) => {
-    console.log('This is event: ', event.target.files);
-  });
-};
-
 const ExcelField = () => {
   return (
     <div className="excelField">
@@ -38,11 +33,7 @@ const ExcelField = () => {
         Create Excel File
       </button>
       <button onClick={() => saveToExcelFile()}>Save to Excel File</button>
-      <h4>Convert Below</h4>
-      <input id="input" type="file" accept=".xls,.xlsx" />
-      <button id="button" onClick={() => convert()}>
-        Convert
-      </button>
+      <ConvertField />
     </div>
   );
 };
