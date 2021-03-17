@@ -22,8 +22,6 @@ const createExcelFile = () => {
   xlsx.writeFile(wb, 'createdTestFile.xlsx');
 };
 
-const saveToExcelFile = () => {};
-
 const ExcelField = () => {
   return (
     <div className="excelField">
@@ -31,7 +29,6 @@ const ExcelField = () => {
       <button className="button" onClick={() => createExcelFile()}>
         Create Excel File
       </button>
-      <button onClick={() => saveToExcelFile()}>Save to Excel File</button>
       <ConvertField />
     </div>
   );

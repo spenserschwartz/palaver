@@ -1,70 +1,47 @@
 import React, { useState } from 'react';
+import { OutTable, ExcelRenderer } from 'react-excel-renderer';
 import XLSX from 'xlsx';
 
 const ConvertField = () => {
-  // const [selectedFile, setSelectedFile] = useState(null);
+  const [rows, setRows] = useState([]);
+  const [columns, setColumns] = useState([]);
 
-  // const convert = () => {
-  //   document.getElementById('input').addEventListener('change', (event) => {
-  //     setSelectedFile(event.target);
-  //   });
+  const onChange = (e) => {
+    console.log('EE: ', e.target.files[0]);
+  };
 
-  //   if (selectedFile) {
-  //     let fileReader = new FileReader();
-  //     fileReader.readAsBinaryString(selectedFile);
-  //     fileReader.onload = (event) => {
-  //       console.log(event.target.result);
-  //     };
-  //   }
-  // };
+  const fileHandler = (event) => {
+    let fileObj = event.target.files[0];
+    console.log('This is fileObj: ', fileObj);
 
-  // return (
-  //   <div className="convertField">
-  //     <h4>Convert Field</h4>
-  //     <input id="input" type="file" accept=".xls,.xlsx" />
-  //     <button id="button" onClick={() => convert()}>
-  //       Convert
-  //     </button>
-  //   </div>
-  // );
-
-  const readExcel = (file) => {
-    const promise = new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsArrayBuffer(file);
-      fileReader.onLoad = (e) => {
-        console.log('fr');
-        const bufferArray = e.target.results;
-
-        const wb = XLSX.read(bufferArray, { type: 'buffer' });
-        const wsName = wb.SheetNames[0];
-
-        const ws = wb.Sheets[wsName];
-        console.log('hey from onLoad');
-
-        const data = XLSX.utils.sheet_to_json(ws);
-
-        resolve(data);
-      };
-      fileReader.onerror = (error) => {
-        console.log('error?');
-        reject(error);
-      };
-    });
-
-    promise.then((d) => {
-      console.log(d);
+    //just pass the fileObj as parameter
+    ExcelRenderer(fileObj, (err, resp) => {
+      if (err) {
+        console.log(err);
+      } else {
+        // this.setState({
+        //   cols: resp.cols,
+        //   rows: resp.rows,
+        // });
+        console.log('hey');
+        setColumns(resp.cols);
+        setRows(resp.rows);
+      }
     });
   };
 
   return (
-    <div>
+    <div id="wrapper">
       <input
         type="file"
-        onChange={(e) => {
-          const file = e.target.files[0];
-          readExcel(file);
-        }}
+        onChange={(e) => fileHandler(e)}
+        style={{ padding: '10px' }}
+      />
+      <OutTable
+        data={rows}
+        columns={columns}
+        tableClassName="ExcelTable2007"
+        tableHeaderRowClass="heading"
       />
     </div>
   );
