@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import XLSX from 'xlsx';
 
-const ConvertField = () => {
+const ConvertField = ({ excelObject, setExcelObject }) => {
   const [selectedFile, setSelectedFile] = useState('noFileSelected');
 
   const fileUpload = (e) => {
@@ -18,14 +18,19 @@ const ConvertField = () => {
         var workbook = XLSX.read(data, {
           type: 'binary',
         });
+
+        const newExcelObject = Object.assign({}, excelObject);
         workbook.SheetNames.forEach((sheet) => {
           let rowObject = XLSX.utils.sheet_to_row_object_array(
             workbook.Sheets[sheet]
           );
-          let jsonObject = JSON.stringify(rowObject);
+          //let jsonObject = JSON.stringify(rowObject);
           //document.getElementById('jsonData').innerHTML = jsonObject;
           console.log(sheet, rowObject);
+          newExcelObject[sheet] = rowObject;
         });
+        // Set excelObject that will be displayed in ExcelTableField
+        setExcelObject(newExcelObject);
       };
       fileReader.readAsBinaryString(selectedFile);
     }

@@ -23,15 +23,18 @@ const createExcelFile = () => {
   xlsx.writeFile(wb, 'createdTestFile.xlsx');
 };
 
-const ExcelField = () => {
+const ExcelField = ({ excelObject, setExcelObject }) => {
   return (
     <div className="excelField">
       <h1>Excel Field</h1>
       <button className="button" onClick={() => createExcelFile()}>
         Create Excel File
       </button>
-      <ConvertField />
-      <ExcelTableField />
+      <ConvertField excelObject={excelObject} setExcelObject={setExcelObject} />
+      <ExcelTableField
+        excelObject={excelObject}
+        setExcelObject={setExcelObject}
+      />
     </div>
   );
 };

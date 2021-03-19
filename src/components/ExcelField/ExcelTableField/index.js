@@ -1,6 +1,7 @@
 import React from 'react';
 
-const ExcelTableField = () => {
+const ExcelTableField = ({ excelObject, setExcelObject }) => {
+  console.log('neO: ', excelObject);
   return (
     <div>
       <h3>Excel Table Field</h3>
