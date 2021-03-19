@@ -5,7 +5,7 @@ import LocalStorageDisplay from './LocalStorageDisplay';
 import { localStorageObjectTemplate } from '../../helpers';
 import { fetchLocalStorage } from '../../helpers/functions';
 
-const LocalStorageField = ({ inputObject, setInputObject }) => {
+const LocalStorageField = () => {
   const [localObject, setLocalObject] = useState(fetchLocalStorage());
   const [localStorageDisplay, setLocalStorageDisplay] = useState(false);
 
