@@ -14,10 +14,7 @@ function App() {
   return (
     <div className="App">
       <ExcelField />
-      <LocalStorageField
-        inputObject={inputObject}
-        setInputObject={setInputObject}
-      />
+      <LocalStorageField />
 
       <InputField inputObject={inputObject} setInputObject={setInputObject} />
 
