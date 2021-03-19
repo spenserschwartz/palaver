@@ -25,7 +25,7 @@ const ConvertField = () => {
           );
           let jsonObject = JSON.stringify(rowObject);
           //document.getElementById('jsonData').innerHTML = jsonObject;
-          console.log(rowObject['1']);
+          console.log(sheet, rowObject);
         });
       };
       fileReader.readAsBinaryString(selectedFile);
