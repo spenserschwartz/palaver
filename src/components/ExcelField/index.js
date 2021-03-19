@@ -1,5 +1,6 @@
 import React from 'react';
 import ConvertField from './ConvertField';
+import ExcelTableField from './ExcelTableField';
 import '../styles.css';
 // https://www.youtube.com/watch?v=tKz_ryychBY
 // https://www.npmjs.com/package/xlsx
@@ -30,6 +31,7 @@ const ExcelField = () => {
         Create Excel File
       </button>
       <ConvertField />
+      <ExcelTableField />
     </div>
   );
 };

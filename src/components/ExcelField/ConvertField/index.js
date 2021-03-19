@@ -6,7 +6,6 @@ const ConvertField = () => {
 
   const fileUpload = (e) => {
     setSelectedFile(e.target.files[0]);
-    console.log('e: ', e.target.files[0]);
   };
 
   const uploadExcel = () => {
