@@ -13,6 +13,7 @@ const SaveButton = () => {
       let inputTextID = 'localStorageTextBox' + key;
       newObject[key] = document.getElementById(inputTextID).value;
     }
+    // Set localStorage after iterating through keys
     localStorage.setItem('Palaver', JSON.stringify(newObject));
   };
 
