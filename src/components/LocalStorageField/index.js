@@ -20,7 +20,8 @@ const LocalStorageField = () => {
   }, [localObject]);
 
   // const object = { coffeeZ: 'cup', chicken: 'eggsf', number: 33 };
-  // localStorage.setItem('Palaver', JSON.stringify(object));
+  const object = localObject;
+  localStorage.setItem('Palaver', JSON.stringify(object));
 
   return (
     <div className="localStorageField">
@@ -29,6 +30,8 @@ const LocalStorageField = () => {
       <ClearButton />
       <FetchLocalStorageButton
         setLocalStorageDisplay={setLocalStorageDisplay}
+        localObject={localObject}
+        setLocalObject={setLocalObject}
       />
 
       {localStorageDisplay ? (

@@ -3,8 +3,12 @@ import { inputObjectTemplate } from '../../../helpers';
 
 const ClearButton = () => {
   const clearLocalStorage = () => {
-    if (window.confirm('Are you sure you want to clear Local Storage?'))
-      localStorage.setItem('Palaver', JSON.stringify(inputObjectTemplate));
+    if (window.confirm('Are you sure you want to clear Local Storage?')) {
+      if (window.confirm('Are you absolutely sure?')) {
+        localStorage.setItem('Palaver', JSON.stringify(inputObjectTemplate));
+      }
+    }
+    // localStorage.setItem('Palaver', JSON.stringify(inputObjectTemplate));
   };
 
   return (
