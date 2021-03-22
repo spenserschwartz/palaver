@@ -2,6 +2,7 @@ import React from 'react';
 import ConvertField from './ConvertField';
 import ExcelTableField from './ExcelTableField';
 import '../styles.css';
+import '../../helpers/styles.css';
 // https://www.youtube.com/watch?v=tKz_ryychBY
 // https://www.npmjs.com/package/xlsx
 
@@ -27,7 +28,7 @@ const ExcelField = ({ excelObject, setExcelObject }) => {
   return (
     <div className="excelField">
       <h1>Excel Field</h1>
-      <button className="button" onClick={() => createExcelFile()}>
+      <button className="button green" onClick={() => createExcelFile()}>
         Create Excel File
       </button>
       <ConvertField excelObject={excelObject} setExcelObject={setExcelObject} />
