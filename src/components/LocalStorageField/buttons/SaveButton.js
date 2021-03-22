@@ -1,4 +1,5 @@
 import { localStorageObjectTemplate } from '../../../helpers';
+import '../../../helpers/styles.css';
 
 const SaveButton = () => {
   const savetoLocalStorage = () => {
@@ -18,8 +19,11 @@ const SaveButton = () => {
   };
 
   return (
-    <div>
-      <button className="button" onClick={() => savetoLocalStorage()}>
+    <div className="saveButtonField">
+      <button
+        className="button button-green"
+        onClick={() => savetoLocalStorage()}
+      >
         Save to Local Storage
       </button>
     </div>
