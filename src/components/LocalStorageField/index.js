@@ -30,7 +30,6 @@ const LocalStorageField = () => {
       <ClearButton />
       <FetchLocalStorageButton
         setLocalStorageDisplay={setLocalStorageDisplay}
-        localObject={localObject}
         setLocalObject={setLocalObject}
       />
 

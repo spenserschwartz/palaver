@@ -3,10 +3,9 @@ import { fetchLocalStorage } from '../../../helpers/functions';
 
 const FetchLocalStorageButton = ({
   setLocalStorageDisplay,
-  localObject,
   setLocalObject,
 }) => {
-  // Async to allow document.getElementById below to have a value
+  // Async to fetch from localStorage
   const buttonClick = async () => {
     const newObject = await fetchLocalStorage();
     setLocalObject(newObject);
