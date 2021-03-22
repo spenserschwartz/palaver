@@ -6,7 +6,6 @@ import './styles.css';
 const LocalStorageTextBox = ({ localObjectKey, localObject }) => {
   const [input, updateInput] = useState('');
   const textBoxID = 'localStorageTextBox' + localObjectKey;
-  console.log('tbi: ', textBoxID);
 
   // Async to display the current localStorage values in text box
   // Also used to not refresh when Generate button is clicked
