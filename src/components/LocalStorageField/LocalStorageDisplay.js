@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles.css';
 import LocalStorageTextBox from './LocalStorageTextBox';
-//import { inputObjectTemplate } from '../../helpers';
 
 const LocalStorageDisplay = ({ localObject }) => {
   return (
