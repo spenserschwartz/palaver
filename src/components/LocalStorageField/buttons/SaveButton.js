@@ -10,16 +10,15 @@ const SaveButton = () => {
     // Save the current text in the textboxes to localStorage
     const newObject = localStorageObjectTemplate;
     for (let key in newObject) {
-      console.log('This is key: ', key);
       let inputTextID = 'localStorageTextBox' + key;
       newObject[key] = document.getElementById(inputTextID).value;
-      localStorage.setItem('Palaver', JSON.stringify(newObject));
     }
+    localStorage.setItem('Palaver', JSON.stringify(newObject));
   };
 
   return (
     <div>
-      <button onClick={() => savetoLocalStorage()}>
+      <button className="button" onClick={() => savetoLocalStorage()}>
         Save to Local Storage
       </button>
     </div>
