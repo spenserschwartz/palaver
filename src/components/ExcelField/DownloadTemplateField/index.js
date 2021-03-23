@@ -11,7 +11,7 @@ const DownloadTemplateField = () => {
       <h4>Download Template Field</h4>
 
       <button className="button" onClick={() => download()}>
-        Download
+        Download Excel Template
       </button>
       <a
         id="excelTemplateDownloadLink"
