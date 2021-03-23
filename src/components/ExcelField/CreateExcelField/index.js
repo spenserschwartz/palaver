@@ -1,5 +1,4 @@
 import React from 'react';
-import PalaverDatabase from '../../../assets/PalaverDatabase.xlsx';
 const xlsx = require('xlsx');
 
 const CreateExcelField = () => {
@@ -19,17 +18,12 @@ const CreateExcelField = () => {
     xlsx.writeFile(wb, 'createdTestFile.xlsx');
   };
 
-  const download = () => {};
-
   return (
     <div className="createExcelField">
       <h3>Create Excel Field</h3>
       <button className="button green" onClick={() => createExcelFile()}>
         Create Excel File
       </button>
-      <a href={PalaverDatabase} download="PalaverDataf.xlsx">
-        Click to Download
-      </a>
     </div>
   );
 };

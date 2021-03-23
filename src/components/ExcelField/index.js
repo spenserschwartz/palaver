@@ -1,9 +1,14 @@
 import React from 'react';
-import ConvertField from './ConvertField';
-import ExcelTableField from './ExcelTableField';
 import '../styles.css';
 import '../../helpers/styles.css';
-import CreateExcelField from './CreateExcelField';
+
+import {
+  ConvertField,
+  CreateExcelField,
+  DownloadTemplateField,
+  ExcelTableField,
+} from './fields';
+
 // https://www.youtube.com/watch?v=tKz_ryychBY
 // https://www.npmjs.com/package/xlsx
 
@@ -13,6 +18,8 @@ const ExcelField = ({ excelObject, setExcelObject }) => {
       <h1>Excel Field</h1>
 
       <CreateExcelField />
+
+      <DownloadTemplateField />
 
       <ConvertField excelObject={excelObject} setExcelObject={setExcelObject} />
 
