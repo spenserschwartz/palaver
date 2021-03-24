@@ -1,3 +1,5 @@
+import { NumberRangeColumnFilter } from '../../../helpers/excelFunctions';
+
 export const COLUMNSTANNER = [
   {
     Header: 'Status',
@@ -8,6 +10,11 @@ export const COLUMNSTANNER = [
   {
     Header: 'Date Submitted',
     accessor: 'Date Submitted',
+    Filter: NumberRangeColumnFilter,
+    filter: 'between',
+    // Aggregate the sum of all dates (?)
+    aggregate: 'sum',
+    Aggregated: ({ value }) => `${value} (total)`,
   },
   {
     Header: 'Company Name',
