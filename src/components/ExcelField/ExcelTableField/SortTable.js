@@ -25,6 +25,7 @@ const SortTable = ({ excelObject }) => {
     useSortBy
   );
 
+  // Only show the first 20 rows
   const firstPageRows = rows.slice(0, 20);
 
   return (
