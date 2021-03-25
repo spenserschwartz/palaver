@@ -1,7 +1,6 @@
 // https://codesandbox.io/s/gw0ih
 import './table.css';
-import React, { useEffect, useState } from 'react';
-import { matchSorter } from 'match-sorter';
+import React, { useEffect } from 'react';
 
 import { COLUMNS } from './columns';
 import { Table } from '../../../helpers/excel/components';
