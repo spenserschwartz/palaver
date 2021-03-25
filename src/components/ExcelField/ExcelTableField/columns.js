@@ -1,4 +1,4 @@
-import { NumberRangeColumnFilter } from '../../../helpers/excelFunctions';
+import { NumberRangeColumnFilter } from '../../../helpers/excel/excelFunctions';
 
 export const COLUMNS = [
   {

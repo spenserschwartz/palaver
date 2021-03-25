@@ -14,39 +14,9 @@ import { matchSorter } from 'match-sorter';
 
 import { COLUMNS } from './columns';
 
-import { DefaultColumnFilter } from '../../../helpers/excelFunctions';
-
-// Create an editable cell renderer
-const EditableCell = ({
-  value: initialValue,
-  row: { index },
-  column: { id },
-  updateMyData, // This is a custom function that we supplied to our table instance
-  editable,
-}) => {
-  // We need to keep and update the state of the cell normally
-  const [value, setValue] = useState(initialValue);
-
-  const onChange = (e) => {
-    setValue(e.target.value);
-  };
-
-  // We'll only update the external data when the input is blurred
-  const onBlur = () => {
-    updateMyData(index, id, value);
-  };
-
-  // If the initialValue is changed externally, sync it up with our state
-  useEffect(() => {
-    setValue(initialValue);
-  }, [initialValue]);
-
-  if (!editable) {
-    return `${initialValue}`;
-  }
-
-  return <input value={value} onChange={onChange} onBlur={onBlur} />;
-};
+import { DefaultColumnFilter } from '../../../helpers/excel/excelFunctions';
+import EditableCell from '../../../helpers/excel/components/EditableCell';
+import IndeterminateCheckbox from '../../../helpers/excel/components/IndeterminateCheckbox';
 
 function fuzzyTextFilterFn(rows, id, filterValue) {
   return matchSorter(rows, filterValue, { keys: [(row) => row.values[id]] });
@@ -320,49 +290,11 @@ function filterGreaterThan(rows, id, filterValue) {
 // check, but here, we want to remove the filter if it's not a number
 filterGreaterThan.autoRemove = (val) => typeof val !== 'number';
 
-// This is a custom aggregator that
-// takes in an array of leaf values and
-// returns the rounded median
-function roundedMedian(leafValues) {
-  let min = leafValues[0] || 0;
-  let max = leafValues[0] || 0;
-
-  leafValues.forEach((value) => {
-    min = Math.min(min, value);
-    max = Math.max(max, value);
-  });
-
-  return Math.round((min + max) / 2);
-}
-
-const IndeterminateCheckbox = React.forwardRef(
-  ({ indeterminate, ...rest }, ref) => {
-    const defaultRef = React.useRef();
-    const resolvedRef = ref || defaultRef;
-
-    React.useEffect(() => {
-      resolvedRef.current.indeterminate = indeterminate;
-    }, [resolvedRef, indeterminate]);
-
-    return (
-      <>
-        <input type="checkbox" ref={resolvedRef} {...rest} />
-      </>
-    );
-  }
-);
-
 function ExcelTable({ excelObject }) {
   const columns = React.useMemo(() => COLUMNS, []);
 
-  const [data, setData] = React.useState([
-    {
-      Status: 'In Review',
-      'Date Submitted': 44248,
-      'Company Name': 'Facebook',
-      'Job Title': 'Software Engineers',
-    },
-  ]);
+  const [data, setData] = React.useState([]);
+  const [originalData, setOriginalData] = React.useState(data);
 
   useEffect(() => {
     console.log('UE: ', excelObject['Applications']);
@@ -371,8 +303,6 @@ function ExcelTable({ excelObject }) {
       setOriginalData(excelObject['Applications']);
     }
   }, [excelObject]);
-
-  const [originalData, setOriginalData] = React.useState(data);
 
   // We need to keep the table from resetting the pageIndex when we
   // Update data. So we can keep track of that flag with a ref.
