@@ -10,9 +10,8 @@ import {
   useRowSelect,
 } from 'react-table';
 
-import { DefaultColumnFilter } from '../../../helpers/excel/excelFunctions';
-import EditableCell from '../../../helpers/excel/components/EditableCell';
-import IndeterminateCheckbox from '../../../helpers/excel/components/IndeterminateCheckbox';
+import { DefaultColumnFilter } from '../excelFunctions';
+import { EditableCell, IndeterminateCheckbox } from '../components';
 
 function fuzzyTextFilterFn(rows, id, filterValue) {
   return matchSorter(rows, filterValue, { keys: [(row) => row.values[id]] });
