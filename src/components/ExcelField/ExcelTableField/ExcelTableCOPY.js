@@ -1,6 +1,6 @@
 // https://codesandbox.io/s/gw0ih
-
-import React, { useMemo, useEffect, useState } from 'react';
+import './table.css';
+import React, { useEffect, useState } from 'react';
 import {
   useTable,
   usePagination,
@@ -12,8 +12,7 @@ import {
 } from 'react-table';
 import { matchSorter } from 'match-sorter';
 
-//import makeData from './makeData';
-import { COLUMNSTANNER } from './columnsTanner';
+import { COLUMNS } from './columns';
 
 // Create an editable cell renderer
 const EditableCell = ({
@@ -24,7 +23,7 @@ const EditableCell = ({
   editable,
 }) => {
   // We need to keep and update the state of the cell normally
-  const [value, setValue] = React.useState(initialValue);
+  const [value, setValue] = useState(initialValue);
 
   const onChange = (e) => {
     setValue(e.target.value);
@@ -35,8 +34,8 @@ const EditableCell = ({
     updateMyData(index, id, value);
   };
 
-  // If the initialValue is changed externall, sync it up with our state
-  React.useEffect(() => {
+  // If the initialValue is changed externally, sync it up with our state
+  useEffect(() => {
     setValue(initialValue);
   }, [initialValue]);
 
@@ -495,8 +494,8 @@ const IndeterminateCheckbox = React.forwardRef(
   }
 );
 
-function TannerTable({ excelObject }) {
-  const columns = React.useMemo(() => COLUMNSTANNER, []);
+function ExcelTable({ excelObject }) {
+  const columns = React.useMemo(() => COLUMNS, []);
 
   const [data, setData] = React.useState([
     {
@@ -568,4 +567,4 @@ function TannerTable({ excelObject }) {
   );
 }
 
-export default TannerTable;
+export default ExcelTable;

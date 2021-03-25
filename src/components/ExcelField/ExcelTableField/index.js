@@ -1,16 +1,12 @@
 import React from 'react';
-import BasicTable from './BasicTable';
-import SortTable from './SortTable';
-import TannerTable from './TannerTable';
+import ExcelTable from './ExcelTable';
 
 const ExcelTableField = ({ excelObject, setExcelObject }) => {
   console.log('neO: ', excelObject);
   return (
     <div>
       <h3>Excel Table Field</h3>
-      {/* <BasicTable excelObject={excelObject} /> */}
-      {/* <SortTable excelObject={excelObject} /> */}
-      <TannerTable excelObject={excelObject} />
+      <ExcelTable excelObject={excelObject} />
     </div>
   );
 };

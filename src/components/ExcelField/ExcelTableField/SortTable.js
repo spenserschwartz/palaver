@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useTable, useSortBy } from 'react-table';
-import { COLUMNS } from './columns';
+import { COLUMNS } from './columnsOLD';
 import './table.css';
 
 const SortTable = ({ excelObject }) => {

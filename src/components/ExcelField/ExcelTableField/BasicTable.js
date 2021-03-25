@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useTable } from 'react-table';
-import { COLUMNS } from './columns';
+import { COLUMNS } from './columnsOLD';
 import './table.css';
 
 const BasicTable = ({ excelObject }) => {
@@ -8,13 +8,11 @@ const BasicTable = ({ excelObject }) => {
 
   // useMemo ensures data isn't recreated on every render
   const columns = useMemo(() => COLUMNS, []);
-  const tdata = useMemo(() => excelObject['Applications'], [excelObject]) || [];
-  console.log('tdata: ', tdata);
-  const data = [];
+  const data = useMemo(() => excelObject['Applications'], [excelObject]) || [];
 
   const tableInstance = useTable({
     columns: columns,
-    data: tdata,
+    data: data,
   });
 
   const {
