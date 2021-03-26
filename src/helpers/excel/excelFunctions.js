@@ -100,7 +100,6 @@ function SliderColumnFilter({
 
 export {
   filterGreaterThan,
-  NumberRangeColumnFilter,
   roundedMedian,
   SelectColumnFilter,
   SliderColumnFilter,
