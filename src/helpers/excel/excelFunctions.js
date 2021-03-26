@@ -1,23 +1,6 @@
 // https://react-table.tanstack.com/docs/examples/filtering
 import React from 'react';
 
-// Define a default UI for filtering
-function DefaultColumnFilter({
-  column: { filterValue, preFilteredRows, setFilter },
-}) {
-  const count = preFilteredRows.length;
-
-  return (
-    <input
-      value={filterValue || ''}
-      onChange={(e) => {
-        setFilter(e.target.value || undefined); // Set undefined to remove the filter entirely
-      }}
-      placeholder={`Search ${count} records...`}
-    />
-  );
-}
-
 // Define a custom filter filter function!
 function filterGreaterThan(rows, id, filterValue) {
   return rows.filter((row) => {
@@ -175,7 +158,6 @@ function SliderColumnFilter({
 }
 
 export {
-  DefaultColumnFilter,
   filterGreaterThan,
   NumberRangeColumnFilter,
   roundedMedian,

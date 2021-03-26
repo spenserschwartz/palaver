@@ -25,7 +25,9 @@ export const COLUMNS = [
     Cell: ({ row: { original } }) => (
       <div>
         Taking out Cell will go back to normal
-        <button onClick={() => console.log(original)}>Button text</button>
+        <button onClick={() => console.log(original['Company Name'])}>
+          Button text
+        </button>
       </div>
     ),
   },
