@@ -22,6 +22,12 @@ export const COLUMNS = [
     filter: 'fuzzyText',
     aggregate: 'uniqueCount',
     Aggregated: ({ value }) => `${value} Unique Names`,
+    Cell: ({ row: { original } }) => (
+      <div>
+        Taking out Cell will go back to normal
+        <button onClick={() => console.log(original)}>Button text</button>
+      </div>
+    ),
   },
   {
     Header: 'Job Title',
