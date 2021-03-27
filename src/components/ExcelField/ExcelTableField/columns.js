@@ -22,17 +22,19 @@ export const COLUMNS = [
     filter: 'fuzzyText',
     aggregate: 'uniqueCount',
     Aggregated: ({ value }) => `${value} Unique Names`,
+  },
+  {
+    Header: 'Job Title',
+    accessor: 'Job Title',
+  },
+  {
+    Header: 'TestyColumn',
     Cell: ({ row: { original } }) => (
       <div>
-        Taking out Cell will go back to normal
         <button onClick={() => console.log(original['Company Name'])}>
           Button text
         </button>
       </div>
     ),
-  },
-  {
-    Header: 'Job Title',
-    accessor: 'Job Title',
   },
 ];
