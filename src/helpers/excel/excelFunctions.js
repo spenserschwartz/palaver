@@ -1,5 +1,4 @@
 // https://react-table.tanstack.com/docs/examples/filtering
-import React from 'react';
 
 // Define a custom filter filter function!
 function filterGreaterThan(rows, id, filterValue) {
