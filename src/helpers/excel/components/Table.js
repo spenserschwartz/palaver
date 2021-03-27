@@ -10,19 +10,13 @@ import {
   useRowSelect,
 } from 'react-table';
 
-//import { DefaultColumnFilter } from '../excelFunctions';
 import {
   DefaultColumnFilter,
   EditableCell,
   IndeterminateCheckbox,
 } from '../components';
 
-function fuzzyTextFilterFn(rows, id, filterValue) {
-  return matchSorter(rows, filterValue, { keys: [(row) => row.values[id]] });
-}
-
-// Let the table remove the filter if the string is empty
-fuzzyTextFilterFn.autoRemove = (val) => !val;
+import { fuzzyTextFilterFn } from '../excelFunctions';
 
 // Be sure to pass our updateMyData and the skipReset option
 function Table({ columns, data, updateMyData, skipReset }) {

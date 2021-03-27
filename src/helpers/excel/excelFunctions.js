@@ -1,4 +1,5 @@
 // https://react-table.tanstack.com/docs/examples/filtering
+import { matchSorter } from 'match-sorter';
 
 // Define a custom filter filter function!
 function filterGreaterThan(rows, id, filterValue) {
@@ -13,6 +14,13 @@ function filterGreaterThan(rows, id, filterValue) {
 // will be automatically removed. Normally this is just an undefined
 // check, but here, we want to remove the filter if it's not a number
 filterGreaterThan.autoRemove = (val) => typeof val !== 'number';
+
+function fuzzyTextFilterFn(rows, id, filterValue) {
+  return matchSorter(rows, filterValue, { keys: [(row) => row.values[id]] });
+}
+
+// Let the table remove the filter if the string is empty
+fuzzyTextFilterFn.autoRemove = (val) => !val;
 
 // This is a custom aggregator that
 // takes in an array of leaf values and
@@ -29,4 +37,4 @@ function roundedMedian(leafValues) {
   return Math.round((min + max) / 2);
 }
 
-export { filterGreaterThan, roundedMedian };
+export { filterGreaterThan, fuzzyTextFilterFn, roundedMedian };
