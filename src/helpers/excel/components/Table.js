@@ -1,5 +1,4 @@
 import React from 'react';
-import { matchSorter } from 'match-sorter';
 import {
   useTable,
   usePagination,
