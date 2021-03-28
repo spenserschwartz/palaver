@@ -31,9 +31,7 @@ export const COLUMNS = [
     Header: 'TestyColumn',
     Cell: ({ row: { original } }) => (
       <div>
-        <button onClick={() => console.log(original['Company Name'])}>
-          Button text
-        </button>
+        <button onClick={() => console.log(original)}>Button text</button>
       </div>
     ),
   },
