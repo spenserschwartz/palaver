@@ -34,17 +34,10 @@ export const COLUMNS = [
   {
     Header: 'TestyColumn',
     Cell: ({ row: { original } }) => {
-      const [showModal, setShowModal] = useState(false);
-
-      const openModal = () => {
-        setShowModal((prev) => !prev);
-      };
-
       return (
         <div>
-          <button onClick={() => openModal()}>TC text</button>
-
-          <Appy />
+          <button onClick={() => console.log(original)}>Origin AL</button>
+          <Appy rowData={original} />
         </div>
       );
     },

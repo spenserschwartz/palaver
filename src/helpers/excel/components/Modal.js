@@ -5,12 +5,13 @@ import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
 
-const Appy = () => {
+const Appy = ({ rowData }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleModal() {
     setIsOpen(!isOpen);
   }
+  console.log('Appy Data: ', rowData);
 
   return (
     <div className="App">
@@ -25,6 +26,7 @@ const Appy = () => {
         closeTimeoutMS={500}
       >
         <div>My modal dialog.</div>
+        <div>{rowData['Link to Application']}</div>
         <button onClick={toggleModal}>Close modal</button>
       </Modal>
     </div>
