@@ -1,4 +1,8 @@
-import { NumberRangeColumnFilter } from '../../../helpers/excel/components';
+import {
+  Appy,
+  NumberRangeColumnFilter,
+} from '../../../helpers/excel/components';
+import React, { useState } from 'react';
 
 export const COLUMNS = [
   {
@@ -29,10 +33,28 @@ export const COLUMNS = [
   },
   {
     Header: 'TestyColumn',
+    Cell: ({ row: { original } }) => {
+      const [showModal, setShowModal] = useState(false);
+
+      const openModal = () => {
+        setShowModal((prev) => !prev);
+      };
+
+      return (
+        <div>
+          <button onClick={() => openModal()}>TC text</button>
+
+          <Appy />
+        </div>
+      );
+    },
+  },
+  {
+    Header: 'OriginalColumn',
     Cell: ({ row: { original } }) => (
       <div>
-        <button onClick={() => console.log('Testy: ', original)}>
-          TC text
+        <button onClick={() => console.log('Original: ', original)}>
+          Original text
         </button>
       </div>
     ),
