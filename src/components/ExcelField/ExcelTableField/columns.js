@@ -31,7 +31,17 @@ export const COLUMNS = [
     Header: 'TestyColumn',
     Cell: ({ row: { original } }) => (
       <div>
-        <button onClick={() => console.log(original)}>Button text</button>
+        <button onClick={() => console.log('Testy: ', original)}>
+          TC text
+        </button>
+      </div>
+    ),
+  },
+  {
+    Header: 'DataColumn',
+    Cell: ({ data }) => (
+      <div>
+        <button onClick={() => console.log('DC: ', data)}>Data text</button>
       </div>
     ),
   },
