@@ -1,8 +1,8 @@
 import {
-  Appy,
+  ExcelRowModal,
   NumberRangeColumnFilter,
 } from '../../../helpers/excel/components';
-import React, { useState } from 'react';
+import React from 'react';
 
 export const COLUMNS = [
   {
@@ -37,7 +37,7 @@ export const COLUMNS = [
       return (
         <div>
           <button onClick={() => console.log(original)}>Origin AL</button>
-          <Appy rowData={original} />
+          <ExcelRowModal rowData={original} />
         </div>
       );
     },

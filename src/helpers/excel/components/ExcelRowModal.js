@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
 
-const Appy = ({ rowData }) => {
+const ExcelRowModal = ({ rowData }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleModal() {
@@ -33,4 +33,4 @@ const Appy = ({ rowData }) => {
   );
 };
 
-export default Appy;
+export default ExcelRowModal;
