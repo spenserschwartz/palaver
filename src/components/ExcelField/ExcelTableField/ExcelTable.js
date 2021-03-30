@@ -12,7 +12,6 @@ function ExcelTable({ excelObject }) {
   const [originalData, setOriginalData] = React.useState(data);
 
   useEffect(() => {
-    console.log('UE: ', excelObject['Applications']);
     if (excelObject['Applications']) {
       setData(excelObject['Applications']);
       setOriginalData(excelObject['Applications']);

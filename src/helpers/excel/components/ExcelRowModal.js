@@ -8,10 +8,13 @@ Modal.setAppElement('#root');
 const ExcelRowModal = ({ rowData }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  function toggleModal() {
+  const companyName = rowData['Company Name'];
+  const status = rowData['Status'];
+  const jobTitle = rowData['Job Title'];
+
+  const toggleModal = () => {
     setIsOpen(!isOpen);
-  }
-  console.log('Appy Data: ', rowData);
+  };
 
   return (
     <div className="App">
@@ -25,7 +28,7 @@ const ExcelRowModal = ({ rowData }) => {
         overlayClassName="myoverlay"
         closeTimeoutMS={500}
       >
-        <div>My modal dialog.</div>
+        <h4>{`${companyName}: ${rowData['Job Title']}`}</h4>
         <div>{rowData['Link to Application']}</div>
         <button onClick={toggleModal}>Close modal</button>
       </Modal>

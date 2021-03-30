@@ -19,7 +19,6 @@ import { fuzzyTextFilterFn } from '../excelFunctions';
 
 // Be sure to pass our updateMyData and the skipReset option
 function Table({ columns, data, updateMyData, skipReset }) {
-  console.log('T: ', data);
   const filterTypes = React.useMemo(
     () => ({
       // Add a new fuzzyTextFilterFn filter type.

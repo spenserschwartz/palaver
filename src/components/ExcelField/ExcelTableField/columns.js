@@ -36,7 +36,6 @@ export const COLUMNS = [
     Cell: ({ row: { original } }) => {
       return (
         <div>
-          <button onClick={() => console.log(original)}>Origin AL</button>
           <ExcelRowModal rowData={original} />
         </div>
       );
