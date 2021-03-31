@@ -17,7 +17,7 @@ const ExcelField = ({ excelObject, setExcelObject }) => {
     <div className="excelField">
       <h1>Excel Field</h1>
 
-      <CreateExcelField />
+      <CreateExcelField excelObject={excelObject} />
 
       <DownloadTemplateField />
 

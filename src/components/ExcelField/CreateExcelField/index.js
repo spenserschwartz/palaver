@@ -1,7 +1,7 @@
 import React from 'react';
 const xlsx = require('xlsx');
 
-const CreateExcelField = () => {
+const CreateExcelField = ({ excelObject }) => {
   const createExcelFile = () => {
     const wb = xlsx.utils.book_new(); // Create a new workbook
     wb.Props = {
@@ -18,8 +18,24 @@ const CreateExcelField = () => {
     xlsx.writeFile(wb, 'createdTestFile.xlsx');
   };
 
+  console.log('CEF eO: ', excelObject);
+
   const createExcelFromExcelObject = () => {
-    console.log('hey');
+    const wb = xlsx.utils.book_new(); // Create a new workbook
+    wb.Props = {
+      Title: 'Palaver Database',
+      Subject: 'Palaver Database',
+      //Author: 'Red Stapler',
+      CreatedDate: new Date(),
+    };
+
+    wb.SheetNames.push('Applications'); // Assign a new sheet name and push to SheetNames array
+    const applicationsWS = xlsx.utils.json_to_sheet(
+      excelObject['Applications']
+    );
+
+    wb.Sheets['Applications'] = applicationsWS;
+    xlsx.writeFile(wb, 'testyEO.xlsx');
   };
 
   return (
