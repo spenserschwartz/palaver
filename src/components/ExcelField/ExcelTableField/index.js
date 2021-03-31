@@ -12,7 +12,7 @@ const ExcelTableField = ({ excelObject, setExcelObject }) => {
     <div className="excelTableField">
       <h3>Excel Table Field</h3>
       <button onClick={() => saveExcelObject()}>Save excelObject</button>
-      <ExcelTable excelObject={excelObject} />
+      <ExcelTable excelObject={excelObject} setExcelObject={setExcelObject} />
     </div>
   );
 };

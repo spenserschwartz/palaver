@@ -18,9 +18,19 @@ const CreateExcelField = () => {
     xlsx.writeFile(wb, 'createdTestFile.xlsx');
   };
 
+  const createExcelFromExcelObject = () => {
+    console.log('hey');
+  };
+
   return (
     <div className="createExcelField">
       <h3>Create Excel Field</h3>
+      <button
+        className="button green"
+        onClick={() => createExcelFromExcelObject()}
+      >
+        Create from excelObject
+      </button>
       <button className="button green" onClick={() => createExcelFile()}>
         Create Excel File
       </button>

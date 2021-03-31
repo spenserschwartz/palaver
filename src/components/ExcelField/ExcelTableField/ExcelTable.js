@@ -5,11 +5,13 @@ import React, { useEffect } from 'react';
 import { COLUMNS } from './columns';
 import { Table } from '../../../helpers/excel/components';
 
-function ExcelTable({ excelObject }) {
+function ExcelTable({ excelObject, setExcelObject }) {
   const columns = React.useMemo(() => COLUMNS, []);
 
   const [data, setData] = React.useState([]);
   const [originalData, setOriginalData] = React.useState(data);
+
+  console.log('ExcelTable eO: ', excelObject);
 
   useEffect(() => {
     if (excelObject['Applications']) {
@@ -26,6 +28,11 @@ function ExcelTable({ excelObject }) {
   // the rowIndex, columnId and new value to update the
   // original data
   const updateMyData = (rowIndex, columnId, value) => {
+    // Update excelObject when function is ran (onBlur)
+    const newExcelObject = Object.assign({}, excelObject);
+    newExcelObject['Applications'][rowIndex][columnId] = value;
+    setExcelObject(newExcelObject);
+
     // We also turn on the flag to not reset the page
     skipResetRef.current = true;
     setData((old) =>

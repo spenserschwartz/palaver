@@ -9,8 +9,6 @@ const ExcelRowModal = ({ rowData }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const companyName = rowData['Company Name'];
-  const status = rowData['Status'];
-  const jobTitle = rowData['Job Title'];
 
   const toggleModal = () => {
     setIsOpen(!isOpen);
