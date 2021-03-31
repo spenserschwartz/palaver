@@ -1,9 +1,15 @@
 import React from 'react';
 import './styles.css';
 
+import AddToTableButton from './AddToTableButton';
 import InputRow from './InputRow';
 
-const InputField = ({ inputObject, setInputObject }) => {
+const InputField = ({
+  inputObject,
+  setInputObject,
+  excelObject,
+  setExcelObject,
+}) => {
   const generate = (e) => {
     const newObject = Object.assign({}, inputObject);
     for (let key in newObject) {
@@ -30,6 +36,11 @@ const InputField = ({ inputObject, setInputObject }) => {
           value="Generate"
         />
       </form>
+
+      <AddToTableButton
+        excelObject={excelObject}
+        setExcelObject={setExcelObject}
+      />
     </div>
   );
 };

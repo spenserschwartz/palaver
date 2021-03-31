@@ -18,7 +18,12 @@ function App() {
 
       <LocalStorageField />
 
-      <InputField inputObject={inputObject} setInputObject={setInputObject} />
+      <InputField
+        inputObject={inputObject}
+        setInputObject={setInputObject}
+        excelObject={excelObject}
+        setExcelObject={setExcelObject}
+      />
 
       <ResultsField inputObject={inputObject} setInputObject={setInputObject} />
     </div>
