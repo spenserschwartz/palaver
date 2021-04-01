@@ -2,8 +2,6 @@ import React from 'react';
 import ExcelTable from './ExcelTable';
 
 const ExcelTableField = ({ excelObject, setExcelObject }) => {
-  console.log('neO: ', excelObject);
-
   const saveExcelObject = () => {
     console.log('savey');
   };

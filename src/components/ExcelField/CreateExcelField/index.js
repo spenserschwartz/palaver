@@ -2,8 +2,6 @@ import React from 'react';
 const xlsx = require('xlsx');
 
 const CreateExcelField = ({ excelObject }) => {
-  console.log('CEF eO: ', excelObject);
-
   const createExcelFromExcelObject = () => {
     if (excelObject['Applications']) {
       const wb = xlsx.utils.book_new(); // Create a new workbook

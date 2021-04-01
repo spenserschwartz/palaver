@@ -26,7 +26,6 @@ const ConvertField = ({ excelObject, setExcelObject }) => {
           );
           //let jsonObject = JSON.stringify(rowObject);
           //document.getElementById('jsonData').innerHTML = jsonObject;
-          console.log(sheet, rowObject);
           newExcelObject[sheet] = rowObject;
         });
         // Set excelObject that will be displayed in ExcelTableField

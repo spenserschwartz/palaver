@@ -11,9 +11,8 @@ function ExcelTable({ excelObject, setExcelObject }) {
   const [data, setData] = React.useState([]);
   const [originalData, setOriginalData] = React.useState(data);
 
-  console.log('ExcelTable eO: ', excelObject);
-
   useEffect(() => {
+    console.log('useEffect excelObject', excelObject);
     if (excelObject['Applications']) {
       setData(excelObject['Applications']);
       setOriginalData(excelObject['Applications']);
@@ -53,6 +52,7 @@ function ExcelTable({ excelObject, setExcelObject }) {
   // editing it, the page is reset
   React.useEffect(() => {
     skipResetRef.current = false;
+    console.log('useEffect data ', data);
   }, [data]);
 
   // Let's add a data resetter/randomizer to help
@@ -60,12 +60,21 @@ function ExcelTable({ excelObject, setExcelObject }) {
   const resetData = () => {
     // Don't reset the page when we do this
     skipResetRef.current = true;
-    setData(originalData);
+
+    const dummyData = [
+      {
+        Status: 'dummy',
+        'Date Submitted': 22000,
+        'Company Name': 'booga',
+        'Job Title': 'bum bum',
+      },
+    ];
+    setData(dummyData);
   };
 
   return (
     <div className="excelTable">
-      <button onClick={resetData}>Reset Data</button>
+      <button onClick={() => resetData()}>Reset Data</button>
       <Table
         columns={columns}
         data={data}
