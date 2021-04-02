@@ -5,17 +5,18 @@ import React, { useEffect } from 'react';
 import { COLUMNS } from './columns';
 import { Table } from '../../../helpers/excel/components';
 
-function ExcelTable({ excelObject, setExcelObject }) {
+function ExcelTable({ excelObject, setExcelObject, excelData, setExcelData }) {
   const columns = React.useMemo(() => COLUMNS, []);
 
-  const [data, setData] = React.useState([]);
-  const [originalData, setOriginalData] = React.useState(data);
+  console.log('excelData ET', excelData);
+  const [data, setData] = React.useState(excelData);
+  //const [originalData, setOriginalData] = React.useState(data);
 
   useEffect(() => {
     console.log('useEffect excelObject', excelObject);
     if (excelObject['Applications']) {
       setData(excelObject['Applications']);
-      setOriginalData(excelObject['Applications']);
+      //setOriginalData(excelObject['Applications']);
     }
   }, [excelObject]);
 
@@ -58,6 +59,8 @@ function ExcelTable({ excelObject, setExcelObject }) {
   // Let's add a data resetter/randomizer to help
   // illustrate that flow...
   const resetData = () => {
+    console.log('resetData eO: ', excelObject);
+
     // Don't reset the page when we do this
     skipResetRef.current = true;
 
@@ -70,6 +73,10 @@ function ExcelTable({ excelObject, setExcelObject }) {
       },
     ];
     setData(dummyData);
+
+    // const newExcelObject = Object.assign({}, excelObject);
+    // newExcelObject['Applications'] = dummyData;
+    // setExcelObject(newExcelObject);
   };
 
   return (

@@ -11,10 +11,16 @@ import './App.css';
 function App() {
   const [inputObject, setInputObject] = useState(inputObjectTemplate);
   const [excelObject, setExcelObject] = useState({});
+  const [excelData, setExcelData] = useState([]);
 
   return (
     <div className="App">
-      <ExcelField excelObject={excelObject} setExcelObject={setExcelObject} />
+      <ExcelField
+        excelObject={excelObject}
+        setExcelObject={setExcelObject}
+        excelData={excelData}
+        setExcelData={setExcelData}
+      />
 
       <LocalStorageField />
 
@@ -23,6 +29,8 @@ function App() {
         setInputObject={setInputObject}
         excelObject={excelObject}
         setExcelObject={setExcelObject}
+        excelData={excelData}
+        setExcelData={setExcelData}
       />
 
       <ResultsField inputObject={inputObject} setInputObject={setInputObject} />

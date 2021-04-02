@@ -12,7 +12,12 @@ import {
 // https://www.youtube.com/watch?v=tKz_ryychBY
 // https://www.npmjs.com/package/xlsx
 
-const ExcelField = ({ excelObject, setExcelObject }) => {
+const ExcelField = ({
+  excelObject,
+  setExcelObject,
+  excelData,
+  setExcelData,
+}) => {
   return (
     <div className="excelField">
       <h1>Excel Field</h1>
@@ -21,11 +26,18 @@ const ExcelField = ({ excelObject, setExcelObject }) => {
 
       <DownloadTemplateField />
 
-      <ConvertField excelObject={excelObject} setExcelObject={setExcelObject} />
+      <ConvertField
+        excelObject={excelObject}
+        setExcelObject={setExcelObject}
+        excelData={excelData}
+        setExcelData={setExcelData}
+      />
 
       <ExcelTableField
         excelObject={excelObject}
         setExcelObject={setExcelObject}
+        excelData={excelData}
+        setExcelData={setExcelData}
       />
     </div>
   );

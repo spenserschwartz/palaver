@@ -1,9 +1,7 @@
 import React from 'react';
 
-const AddToTableButton = ({ excelObject, setExcelObject }) => {
+const AddToTableButton = ({ excelObject, setExcelObject, setExcelData }) => {
   const addToExcelTable = () => {
-    console.log('clicky');
-
     // Add new row to excelObject
     const inputCompanyName = document.getElementById('inputTextBoxcompanyName');
     const newRow = {
@@ -15,6 +13,8 @@ const AddToTableButton = ({ excelObject, setExcelObject }) => {
     const newExcelObject = Object.assign({}, excelObject);
     newExcelObject['Applications'].push(newRow);
     setExcelObject(newExcelObject);
+
+    //setExcelData(newExcelObject['Applications']);
   };
 
   return (

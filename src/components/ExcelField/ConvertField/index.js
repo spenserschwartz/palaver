@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import XLSX from 'xlsx';
 
-const ConvertField = ({ excelObject, setExcelObject }) => {
+const ConvertField = ({
+  excelObject,
+  setExcelObject,
+  excelData,
+  setExcelData,
+}) => {
   const [selectedFile, setSelectedFile] = useState('noFileSelected');
 
   const fileUpload = (e) => {

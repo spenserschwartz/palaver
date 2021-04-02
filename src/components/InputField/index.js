@@ -9,6 +9,7 @@ const InputField = ({
   setInputObject,
   excelObject,
   setExcelObject,
+  setExcelData,
 }) => {
   const generate = (e) => {
     const newObject = Object.assign({}, inputObject);
@@ -40,6 +41,7 @@ const InputField = ({
       <AddToTableButton
         excelObject={excelObject}
         setExcelObject={setExcelObject}
+        setExcelData={setExcelData}
       />
     </div>
   );

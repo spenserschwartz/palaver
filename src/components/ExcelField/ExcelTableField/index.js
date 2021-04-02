@@ -1,7 +1,12 @@
 import React from 'react';
 import ExcelTable from './ExcelTable';
 
-const ExcelTableField = ({ excelObject, setExcelObject }) => {
+const ExcelTableField = ({
+  excelObject,
+  setExcelObject,
+  excelData,
+  setExcelData,
+}) => {
   const saveExcelObject = () => {
     console.log('savey');
   };
@@ -10,7 +15,12 @@ const ExcelTableField = ({ excelObject, setExcelObject }) => {
     <div className="excelTableField">
       <h3>Excel Table Field</h3>
       <button onClick={() => saveExcelObject()}>Save excelObject</button>
-      <ExcelTable excelObject={excelObject} setExcelObject={setExcelObject} />
+      <ExcelTable
+        excelObject={excelObject}
+        setExcelObject={setExcelObject}
+        excelData={excelData}
+        setExcelData={setExcelData}
+      />
     </div>
   );
 };
