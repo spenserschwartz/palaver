@@ -10,3 +10,15 @@ export const decrement = () => {
     type: 'DECREMENT',
   };
 };
+
+export const pushNum = () => {
+  return {
+    type: 'PUSHNUMBER',
+  };
+};
+
+export const generateMessage = () => {
+  return {
+    type: 'GENERATEMESSAGE',
+  };
+};

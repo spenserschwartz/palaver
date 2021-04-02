@@ -1,4 +1,4 @@
-const counterReducer = (state = 0, action) => {
+const counterReducer = (state = 12, action) => {
   switch (action.type) {
     case 'INCREMENT':
       return state + action.payload; // action.payload is the number parameter from actions/index.js

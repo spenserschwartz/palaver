@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   LocalStorageField,
   InputField,
+  ReduxField,
   ResultsField,
   ExcelField,
 } from './components';
@@ -9,7 +10,7 @@ import { inputObjectTemplate } from './helpers';
 import './App.css';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from './redux/actions';
+import { increment } from './redux/actions';
 
 function App() {
   const [inputObject, setInputObject] = useState(inputObjectTemplate);
@@ -17,12 +18,28 @@ function App() {
   const [excelData, setExcelData] = useState([]);
 
   const counter = useSelector((state) => state.counter);
+  const arrayZ = useSelector((state) => state.arrayz);
+  const inputObjectZ = useSelector((state) => state.inputObjectZ);
   const dispatch = useDispatch();
 
   return (
     <div className="App">
       <h1>Counter {counter}</h1>
-      <button onClick={() => dispatch(increment(3))}>Incrementy</button>
+      <button onClick={() => dispatch(increment(3))}>Incrementy 3</button>
+
+      <div>
+        <p>arrayZ</p>
+        {arrayZ.map((el) => (
+          <div>{el}</div>
+        ))}
+      </div>
+
+      <div>
+        <h5>inputObjectZ</h5>
+        {inputObjectZ.jobTitle}
+      </div>
+
+      <ReduxField />
 
       <ExcelField
         excelObject={excelObject}

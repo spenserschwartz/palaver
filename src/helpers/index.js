@@ -2,7 +2,7 @@
 
 const inputObjectTemplate = {
   companyName: '',
-  jobTitle: '',
+  jobTitle: 'rash decisions',
   personName: '',
   personalIn: '',
 };
