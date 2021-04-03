@@ -22,16 +22,11 @@ const ExcelField = ({
     <div className="excelField">
       <h1>Excel Field</h1>
 
-      <CreateExcelField excelObject={excelObject} />
+      <CreateExcelField />
 
       <DownloadTemplateField />
 
-      <ConvertField
-        excelObject={excelObject}
-        setExcelObject={setExcelObject}
-        excelData={excelData}
-        setExcelData={setExcelData}
-      />
+      <ConvertField setExcelObject={setExcelObject} />
 
       <ExcelTableField
         excelObject={excelObject}
