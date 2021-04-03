@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './styles.css';
 
 import AddToTableButton from './AddToTableButton';
@@ -7,26 +8,13 @@ import InputRow from './InputRow';
 import { useDispatch } from 'react-redux';
 import { generateMessage } from '../../redux/actions';
 
-const InputField = ({
-  inputObject,
-  setInputObject,
-  excelObject,
-  setExcelObject,
-  setExcelData,
-}) => {
+const InputField = ({ excelObject, setExcelObject, setExcelData }) => {
   const dispatch = useDispatch();
+  const inputObject = useSelector((state) => state.inputObject);
 
   const generate = (e) => {
-    const newObject = Object.assign({}, inputObject);
-    for (let key in newObject) {
-      let inputTextID = 'inputTextBox' + key;
-      newObject[key] = document.getElementById(inputTextID).value;
-      setInputObject(newObject);
-    }
-    e.preventDefault();
-
-    // testy in generate
     dispatch(generateMessage());
+    e.preventDefault();
   };
 
   return (

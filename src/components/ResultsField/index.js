@@ -1,19 +1,19 @@
-import React from 'react'
-import '../styles.css'
+import React from 'react';
+import '../styles.css';
 
 import IntroMessage from './IntroMessage';
 import CoverLetter from './CoverLetter';
 
-const ResultsField = ({inputObject, setInputObject}) => {
+const ResultsField = () => {
   return (
     <div className="resultsField">
       <h1>Results Field</h1>
 
-      <IntroMessage inputObject={inputObject} />
+      <IntroMessage />
 
-      <CoverLetter inputObject={inputObject} setInputObject={setInputObject} />
+      <CoverLetter />
     </div>
-  )
-}
+  );
+};
 
-export default ResultsField
+export default ResultsField;

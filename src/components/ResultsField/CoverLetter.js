@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import CopyButton from '../../helpers/components/CopyButton';
-
 import { useSelector } from 'react-redux';
+import CopyButton from '../../helpers/components/CopyButton';
 
 const CoverLetter = () => {
   const inputObject = useSelector((state) => state.inputObject);
