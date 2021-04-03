@@ -4,6 +4,9 @@ import './styles.css';
 import AddToTableButton from './AddToTableButton';
 import InputRow from './InputRow';
 
+import { useDispatch } from 'react-redux';
+import { generateMessage } from '../../redux/actions';
+
 const InputField = ({
   inputObject,
   setInputObject,
@@ -11,6 +14,8 @@ const InputField = ({
   setExcelObject,
   setExcelData,
 }) => {
+  const dispatch = useDispatch();
+
   const generate = (e) => {
     const newObject = Object.assign({}, inputObject);
     for (let key in newObject) {
@@ -19,6 +24,9 @@ const InputField = ({
       setInputObject(newObject);
     }
     e.preventDefault();
+
+    // testy in generate
+    dispatch(generateMessage());
   };
 
   return (

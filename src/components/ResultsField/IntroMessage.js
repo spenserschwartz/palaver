@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
-
-// import {introMessageTemplate1} from '../../helpers';
-// import { copyText } from '../../helpers/functions';
 import CopyButton from '../../helpers/components/CopyButton';
 
-const IntroMessage = ({ inputObject }) => {
+import { useSelector } from 'react-redux';
+
+const IntroMessage = () => {
   const [message, setMessage] = useState('');
   const [message2, setMessage2] = useState('');
   const [toggle, setToggle] = useState(false);
+
+  const inputObject = useSelector((state) => state.inputObject);
 
   const template1 = `Hey ${inputObject.personName}! I saw a ${inputObject.jobTitle} position open up with ${inputObject.companyName} and wanted to connect with you. I'd love to have a chat about if I'm a good fit. Cheers, Spenser`;
 
@@ -18,7 +19,6 @@ const IntroMessage = ({ inputObject }) => {
     const generateIntroMessage = async () => {
       try {
         const response = await inputObject;
-        //console.log('This is response: ', response);
         if (response.personName) {
           setMessage(template1);
           setMessage2(template2);

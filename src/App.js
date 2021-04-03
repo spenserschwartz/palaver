@@ -19,7 +19,7 @@ function App() {
 
   const counter = useSelector((state) => state.counter);
   const arrayZ = useSelector((state) => state.arrayz);
-  const inputObjectZ = useSelector((state) => state.inputObjectZ);
+  const inputObjectZ = useSelector((state) => state.inputObject);
   const dispatch = useDispatch();
 
   return (
@@ -29,8 +29,8 @@ function App() {
 
       <div>
         <p>arrayZ</p>
-        {arrayZ.map((el) => (
-          <div>{el}</div>
+        {arrayZ.map((el, i) => (
+          <div key={i}>{el}</div>
         ))}
       </div>
 

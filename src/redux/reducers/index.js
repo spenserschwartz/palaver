@@ -9,7 +9,7 @@ const allReducers = combineReducers({
   counter: counterReducer,
   //isLogged: loggedReducer
   arrayz: arrayReducer,
-  inputObjectZ: inputObjectReducer,
+  inputObject: inputObjectReducer,
 });
 
 export default allReducers;
