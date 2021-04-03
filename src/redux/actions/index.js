@@ -22,3 +22,16 @@ export const generateMessage = () => {
     type: 'GENERATEMESSAGE',
   };
 };
+
+export const uploadTable = () => {
+  return {
+    type: 'UPLOADTABLE',
+  };
+};
+
+export const selectFile = (selected) => {
+  return {
+    type: 'SELECTFILE',
+    payload: selected,
+  };
+};

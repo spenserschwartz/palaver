@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
 import XLSX from 'xlsx';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { selectFile } from '../../../redux/actions';
+
 const ConvertField = ({
   excelObject,
   setExcelObject,
   excelData,
   setExcelData,
 }) => {
-  const [selectedFile, setSelectedFile] = useState('noFileSelected');
+  //const [selectedFile, setSelectedFile] = useState('noFileSelected');
 
+  //
+  const selectedFile = useSelector((state) => state.selectedFile);
+  const dispatch = useDispatch();
+
+  //
   const fileUpload = (e) => {
-    setSelectedFile(e.target.files[0]);
+    //setSelectedFile(e.target.files[0]);
+
+    dispatch(selectFile(e.target.files[0]));
   };
 
   const uploadExcel = () => {
