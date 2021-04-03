@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import XLSX from 'xlsx';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { selectFile } from '../../../redux/actions';
+import { selectFile, uploadTable } from '../../../redux/actions';
 
 const ConvertField = ({
   excelObject,
@@ -10,16 +10,10 @@ const ConvertField = ({
   excelData,
   setExcelData,
 }) => {
-  //const [selectedFile, setSelectedFile] = useState('noFileSelected');
-
-  //
-  const selectedFile = useSelector((state) => state.selectedFile);
   const dispatch = useDispatch();
+  const selectedFile = useSelector((state) => state.selectedFile);
 
-  //
   const fileUpload = (e) => {
-    //setSelectedFile(e.target.files[0]);
-
     dispatch(selectFile(e.target.files[0]));
   };
 
@@ -45,6 +39,7 @@ const ConvertField = ({
         });
         // Set excelObject that will be displayed in ExcelTableField
         setExcelObject(newExcelObject);
+        dispatch(uploadTable(3, 4));
       };
       fileReader.readAsBinaryString(selectedFile);
     }

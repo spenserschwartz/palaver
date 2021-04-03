@@ -23,9 +23,10 @@ export const generateMessage = () => {
   };
 };
 
-export const uploadTable = () => {
+export const uploadTable = (table, selectedFile) => {
   return {
     type: 'UPLOADTABLE',
+    payload: { table: table, selectedFile: selectedFile },
   };
 };
 
