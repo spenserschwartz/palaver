@@ -1,4 +1,3 @@
-import XLSX from 'xlsx';
 import { excelObjectTemplate } from '../../helpers';
 
 const excelObjectReducer = (state = excelObjectTemplate, action) => {
