@@ -1,0 +1,6 @@
+<script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.map"
+    ></script>
+
+Was causing CORB warning from index.html
