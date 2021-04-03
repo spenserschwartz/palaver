@@ -1,9 +1,10 @@
 import XLSX from 'xlsx';
+import { excelObjectTemplate } from '../../helpers';
 
-const excelObjectReducer = (state = {}, action) => {
+const excelObjectReducer = (state = excelObjectTemplate, action) => {
   switch (action.type) {
     case 'UPLOADTABLE': {
-      return state;
+      return action.payload;
     }
     default:
       return state;

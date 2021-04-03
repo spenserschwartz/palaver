@@ -1,7 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 const xlsx = require('xlsx');
 
-const CreateExcelField = ({ excelObject }) => {
+const CreateExcelField = () => {
+  const excelObject = useSelector((state) => state.excelObject);
+
   const createExcelFromExcelObject = () => {
     if (excelObject['Applications']) {
       const wb = xlsx.utils.book_new(); // Create a new workbook
