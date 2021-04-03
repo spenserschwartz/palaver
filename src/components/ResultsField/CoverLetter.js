@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import CopyButton from '../../helpers/components/CopyButton';
 
-const CoverLetter = ({ inputObject }) => {
+import { useSelector } from 'react-redux';
+
+const CoverLetter = () => {
+  const inputObject = useSelector((state) => state.inputObject);
+
   const [message, setMessage] = useState('');
   const textBoxID = 'coverLetterTextBox';
 
