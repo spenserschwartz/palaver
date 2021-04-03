@@ -56,7 +56,6 @@ function ExcelTable({ setExcelObject }) {
   // editing it, the page is reset
   React.useEffect(() => {
     skipResetRef.current = false;
-    console.log('useEffect data ', data);
   }, [data]);
 
   // Let's add a data resetter/randomizer to help
