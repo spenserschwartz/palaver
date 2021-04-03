@@ -1,19 +1,21 @@
 // https://codesandbox.io/s/gw0ih
 import './table.css';
 import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateTable } from '../../../redux/actions';
 
 import { COLUMNS } from './columns';
 import { Table } from '../../../helpers/excel/components';
 
-function ExcelTable({ excelObject, setExcelObject, excelData, setExcelData }) {
+function ExcelTable({ setExcelObject }) {
   const columns = React.useMemo(() => COLUMNS, []);
+  const excelObject = useSelector((state) => state.excelObject);
+  const dispatch = useDispatch();
 
-  console.log('excelData ET', excelData);
-  const [data, setData] = React.useState(excelData);
+  const [data, setData] = React.useState([]);
   //const [originalData, setOriginalData] = React.useState(data);
 
   useEffect(() => {
-    console.log('useEffect excelObject', excelObject);
     if (excelObject['Applications']) {
       setData(excelObject['Applications']);
       //setOriginalData(excelObject['Applications']);
@@ -31,6 +33,7 @@ function ExcelTable({ excelObject, setExcelObject, excelData, setExcelData }) {
     // Update excelObject when function is ran (onBlur)
     const newExcelObject = Object.assign({}, excelObject);
     newExcelObject['Applications'][rowIndex][columnId] = value;
+    dispatch(updateTable(newExcelObject));
     setExcelObject(newExcelObject);
 
     // We also turn on the flag to not reset the page

@@ -5,6 +5,10 @@ const excelObjectReducer = (state = excelObjectTemplate, action) => {
     case 'UPLOADTABLE': {
       return action.payload;
     }
+    case 'UPDATETABLE': {
+      return action.payload;
+    }
+
     default:
       return state;
   }

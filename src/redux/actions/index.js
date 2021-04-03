@@ -30,6 +30,13 @@ export const uploadTable = (excelObject) => {
   };
 };
 
+export const updateTable = (excelObject) => {
+  return {
+    type: 'UPDATETABLE',
+    payload: excelObject,
+  };
+};
+
 export const selectFile = (selected) => {
   return {
     type: 'SELECTFILE',
