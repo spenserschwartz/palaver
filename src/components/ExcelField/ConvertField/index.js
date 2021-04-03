@@ -4,14 +4,10 @@ import XLSX from 'xlsx';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectFile, uploadTable } from '../../../redux/actions';
 
-const ConvertField = ({
-  excelObject,
-  setExcelObject,
-  excelData,
-  setExcelData,
-}) => {
+const ConvertField = ({ setExcelObject }) => {
   const dispatch = useDispatch();
   const selectedFile = useSelector((state) => state.selectedFile);
+  const excelObject = useSelector((state) => state.excelObject);
 
   const fileUpload = (e) => {
     dispatch(selectFile(e.target.files[0]));
@@ -33,13 +29,12 @@ const ConvertField = ({
           let rowObject = XLSX.utils.sheet_to_row_object_array(
             workbook.Sheets[sheet]
           );
-          //let jsonObject = JSON.stringify(rowObject);
-          //document.getElementById('jsonData').innerHTML = jsonObject;
+
           newExcelObject[sheet] = rowObject;
         });
         // Set excelObject that will be displayed in ExcelTableField
         setExcelObject(newExcelObject);
-        dispatch(uploadTable(3, 4));
+        dispatch(uploadTable(newExcelObject));
       };
       fileReader.readAsBinaryString(selectedFile);
     }

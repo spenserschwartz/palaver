@@ -23,10 +23,10 @@ export const generateMessage = () => {
   };
 };
 
-export const uploadTable = (table, selectedFile) => {
+export const uploadTable = (excelObject) => {
   return {
     type: 'UPLOADTABLE',
-    payload: { table: table, selectedFile: selectedFile },
+    payload: excelObject,
   };
 };
 
