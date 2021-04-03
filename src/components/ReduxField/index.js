@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { decrement, generateMessage, pushNum } from '../../redux/actions';
+import { decrement, pushNum } from '../../redux/actions';
 
 const ReduxField = () => {
   const dispatch = useDispatch();
@@ -11,8 +11,6 @@ const ReduxField = () => {
       <button onClick={() => dispatch(decrement())}>Decrementy</button>
 
       <button onClick={() => dispatch(pushNum())}>PushyNum</button>
-
-      <button onClick={() => dispatch(generateMessage())}>hecky</button>
     </div>
   );
 };
