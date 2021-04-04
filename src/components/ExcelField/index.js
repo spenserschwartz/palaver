@@ -28,12 +28,7 @@ const ExcelField = ({
 
       <ConvertField setExcelObject={setExcelObject} />
 
-      <ExcelTableField
-        excelObject={excelObject}
-        setExcelObject={setExcelObject}
-        excelData={excelData}
-        setExcelData={setExcelData}
-      />
+      <ExcelTableField />
     </div>
   );
 };
