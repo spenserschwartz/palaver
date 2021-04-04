@@ -33,12 +33,7 @@ function App() {
 
       <ReduxField />
 
-      <ExcelField
-        excelObject={excelObject}
-        setExcelObject={setExcelObject}
-        excelData={excelData}
-        setExcelData={setExcelData}
-      />
+      <ExcelField setExcelObject={setExcelObject} />
 
       <LocalStorageField />
 
