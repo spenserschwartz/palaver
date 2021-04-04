@@ -25,7 +25,7 @@ const ExcelTable = () => {
     if (excelObject['Applications']) {
       setData(excelObject['Applications']);
       //setOriginalData(excelObject['Applications']);
-
+      console.log('ue dispatch, eO: ', excelObject);
       dispatch(updateExcelData(excelObject['Applications']));
     }
   }, [dispatch, excelObject]);

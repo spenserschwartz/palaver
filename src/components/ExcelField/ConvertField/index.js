@@ -33,7 +33,7 @@ const ConvertField = ({ setExcelObject }) => {
           newExcelObject[sheet] = rowObject;
         });
         // Set excelObject that will be displayed in ExcelTableField
-        setExcelObject(newExcelObject);
+        //setExcelObject(newExcelObject);
         dispatch(uploadTable(newExcelObject));
       };
       fileReader.readAsBinaryString(selectedFile);

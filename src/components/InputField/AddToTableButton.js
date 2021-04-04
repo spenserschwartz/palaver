@@ -1,10 +1,12 @@
 import React from 'react';
+import XLSX from 'xlsx';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateTable } from '../../redux/actions';
+import { updateExcelData, updateTable } from '../../redux/actions';
 
 const AddToTableButton = () => {
   const dispatch = useDispatch();
   const excelObject = useSelector((state) => state.excelObject);
+  const selectedFile = useSelector((state) => state.selectedFile);
 
   const addToExcelTable = () => {
     // Add new row to excelObject
@@ -17,7 +19,8 @@ const AddToTableButton = () => {
 
     const newExcelObject = Object.assign({}, excelObject);
     newExcelObject['Applications'].push(newRow);
-    dispatch(updateTable(newExcelObject));
+    //dispatch(updateTable(newExcelObject));
+    dispatch(updateExcelData(newExcelObject['Applications']));
   };
 
   return (
