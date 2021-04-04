@@ -1,6 +1,11 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateTable } from '../../redux/actions';
 
-const AddToTableButton = ({ excelObject, setExcelObject, setExcelData }) => {
+const AddToTableButton = () => {
+  const dispatch = useDispatch();
+  const excelObject = useSelector((state) => state.excelObject);
+
   const addToExcelTable = () => {
     // Add new row to excelObject
     const inputCompanyName = document.getElementById('inputTextBoxcompanyName');
@@ -12,9 +17,7 @@ const AddToTableButton = ({ excelObject, setExcelObject, setExcelData }) => {
 
     const newExcelObject = Object.assign({}, excelObject);
     newExcelObject['Applications'].push(newRow);
-    setExcelObject(newExcelObject);
-
-    //setExcelData(newExcelObject['Applications']);
+    dispatch(updateTable(newExcelObject));
   };
 
   return (

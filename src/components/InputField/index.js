@@ -1,14 +1,13 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './styles.css';
 
 import AddToTableButton from './AddToTableButton';
 import InputRow from './InputRow';
 
-import { useDispatch } from 'react-redux';
 import { generateMessage } from '../../redux/actions';
 
-const InputField = ({ excelObject, setExcelObject, setExcelData }) => {
+const InputField = () => {
   const dispatch = useDispatch();
   const inputObject = useSelector((state) => state.inputObject);
 
@@ -34,11 +33,7 @@ const InputField = ({ excelObject, setExcelObject, setExcelData }) => {
         />
       </form>
 
-      <AddToTableButton
-        excelObject={excelObject}
-        setExcelObject={setExcelObject}
-        setExcelData={setExcelData}
-      />
+      <AddToTableButton />
     </div>
   );
 };
