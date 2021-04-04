@@ -33,3 +33,9 @@
   background-color: lightskyblue;
   width: 100%;
 }
+
+.excelTableField {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
