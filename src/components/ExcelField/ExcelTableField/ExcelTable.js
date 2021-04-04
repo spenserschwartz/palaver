@@ -2,7 +2,7 @@
 import './table.css';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateTable } from '../../../redux/actions';
+import { updateExcelData, updateTable } from '../../../redux/actions';
 
 import { COLUMNS } from './columns';
 import { Table } from '../../../helpers/excel/components';
@@ -15,12 +15,20 @@ const ExcelTable = () => {
   const [data, setData] = React.useState([]);
   //const [originalData, setOriginalData] = React.useState(data);
 
+  //testy ExcelTable
+  //dispatch(updateExcelData([44]));
+  const dataZ = useSelector((state) => state.excelData);
+  console.log('dataZ: ', dataZ);
+  //
+
   useEffect(() => {
     if (excelObject['Applications']) {
       setData(excelObject['Applications']);
       //setOriginalData(excelObject['Applications']);
+
+      dispatch(updateExcelData(excelObject['Applications']));
     }
-  }, [excelObject]);
+  }, [dispatch, excelObject]);
 
   // We need to keep the table from resetting the pageIndex when we
   // Update data. So we can keep track of that flag with a ref.

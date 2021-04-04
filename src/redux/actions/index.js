@@ -43,3 +43,10 @@ export const selectFile = (selected) => {
     payload: selected,
   };
 };
+
+export const updateExcelData = (dataArray) => {
+  return {
+    type: 'UPDATEEXCELDATA',
+    payload: dataArray,
+  };
+};
