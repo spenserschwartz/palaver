@@ -7,7 +7,7 @@ import { updateTable } from '../../../redux/actions';
 import { COLUMNS } from './columns';
 import { Table } from '../../../helpers/excel/components';
 
-function ExcelTable({ setExcelObject }) {
+const ExcelTable = () => {
   const columns = React.useMemo(() => COLUMNS, []);
   const excelObject = useSelector((state) => state.excelObject);
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ function ExcelTable({ setExcelObject }) {
     const newExcelObject = Object.assign({}, excelObject);
     newExcelObject['Applications'][rowIndex][columnId] = value;
     dispatch(updateTable(newExcelObject));
-    setExcelObject(newExcelObject);
+    //setExcelObject(newExcelObject);
 
     // We also turn on the flag to not reset the page
     skipResetRef.current = true;
@@ -61,24 +61,23 @@ function ExcelTable({ setExcelObject }) {
   // Let's add a data resetter/randomizer to help
   // illustrate that flow...
   const resetData = () => {
-    console.log('resetData eO: ', excelObject);
-
     // Don't reset the page when we do this
     skipResetRef.current = true;
 
     const dummyData = [
       {
-        Status: 'dummy',
+        Status: 'dummyData',
         'Date Submitted': 22000,
         'Company Name': 'booga',
         'Job Title': 'bum bum',
       },
     ];
+    //setData(originalData);
     setData(dummyData);
 
-    // const newExcelObject = Object.assign({}, excelObject);
-    // newExcelObject['Applications'] = dummyData;
-    // setExcelObject(newExcelObject);
+    const newExcelObject = Object.assign({}, excelObject);
+    newExcelObject['Applications'] = dummyData;
+    dispatch(updateTable(newExcelObject));
   };
 
   return (
@@ -92,6 +91,6 @@ function ExcelTable({ setExcelObject }) {
       />
     </div>
   );
-}
+};
 
 export default ExcelTable;
