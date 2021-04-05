@@ -16,7 +16,7 @@ const ExcelTable = () => {
   //const [originalData, setOriginalData] = React.useState(data);
 
   //testy ExcelTable
-  //dispatch(updateExcelData([44]));
+
   const dataZ = useSelector((state) => state.excelData);
   console.log('dataZ: ', dataZ);
   //
@@ -63,13 +63,13 @@ const ExcelTable = () => {
   // editing it, the page is reset
   React.useEffect(() => {
     skipResetRef.current = false;
-  }, [data]);
+  }, [dataZ]);
 
   // Let's add a data resetter/randomizer to help
   // illustrate that flow...
   const resetData = () => {
     // Don't reset the page when we do this
-    skipResetRef.current = true;
+    skipResetRef.current = false;
 
     const dummyData = [
       {
@@ -92,7 +92,7 @@ const ExcelTable = () => {
       <button onClick={() => resetData()}>Reset Data</button>
       <Table
         columns={columns}
-        data={data}
+        data={dataZ}
         updateMyData={updateMyData}
         skipReset={skipResetRef.current}
       />
