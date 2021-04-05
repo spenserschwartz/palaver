@@ -42,7 +42,6 @@ const ExcelTable = () => {
     const newExcelObject = Object.assign({}, excelObject);
     newExcelObject['Applications'][rowIndex][columnId] = value;
     dispatch(updateTable(newExcelObject));
-    //setExcelObject(newExcelObject);
 
     // We also turn on the flag to not reset the page
     skipResetRef.current = true;
