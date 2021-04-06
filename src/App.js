@@ -12,8 +12,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { increment } from './redux/actions';
 
 function App() {
-  const [excelObject, setExcelObject] = useState({});
-  const [excelData, setExcelData] = useState([]);
+  // const [excelObject, setExcelObject] = useState({});
+  // const [excelData, setExcelData] = useState([]);
 
   const counter = useSelector((state) => state.counter);
   const arrayZ = useSelector((state) => state.arrayz);
@@ -33,7 +33,7 @@ function App() {
 
       <ReduxField />
 
-      <ExcelField setExcelObject={setExcelObject} />
+      <ExcelField />
 
       <LocalStorageField />
 

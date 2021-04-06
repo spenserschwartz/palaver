@@ -37,6 +37,13 @@ export const updateTable = (excelObject) => {
   };
 };
 
+export const addToTable = (excelObject) => {
+  return {
+    type: 'ADDTOTABLE',
+    payload: excelObject,
+  };
+};
+
 export const selectFile = (selected) => {
   return {
     type: 'SELECTFILE',

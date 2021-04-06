@@ -69,7 +69,7 @@ const ExcelTable = () => {
   // illustrate that flow...
   const resetData = () => {
     // Don't reset the page when we do this
-    skipResetRef.current = false;
+    //skipResetRef.current = false;
 
     const dummyData = [
       {
