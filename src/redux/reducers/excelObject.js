@@ -1,31 +1,31 @@
-import { excelObjectTemplate } from '../../helpers';
+import { excelObjectTemplate } from "../../helpers";
 
 const excelObjectReducer = (state = excelObjectTemplate, action) => {
   switch (action.type) {
-    case 'UPLOADTABLE': {
+    case "UPLOADTABLE": {
       return action.payload;
     }
-    case 'UPDATETABLE': {
+    case "UPDATETABLE": {
       return action.payload;
     }
-    case 'ADDTOTABLE': {
+    case "ADDTOTABLE": {
       const newExcelObject = Object.assign({}, state);
-      const data = newExcelObject['Applications'];
-      console.log('Add: ', Date.now());
+      const data = newExcelObject["Applications"];
+
       const date = Date.now();
-      const companyName = document.getElementById('inputTextBoxcompanyName')
+      const companyName = document.getElementById("inputTextBoxcompanyName")
         .value;
-      const jobTitle = document.getElementById('inputTextBoxjobTitle').value;
+      const jobTitle = document.getElementById("inputTextBoxjobTitle").value;
       const newRow = [
         {
-          Status: 'Initial Connect',
-          'Date Submitted': date,
-          'Company Name': companyName,
-          'Job Title': jobTitle,
+          Status: "Initial Connect",
+          "Date Submitted": date,
+          "Company Name": companyName,
+          "Job Title": jobTitle,
         },
       ];
       const newData = data.concat(newRow);
-      newExcelObject['Applications'] = newData;
+      newExcelObject["Applications"] = newData;
       return newExcelObject;
     }
 
