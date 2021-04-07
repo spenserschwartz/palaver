@@ -1,12 +1,12 @@
-import React from 'react';
-import XLSX from 'xlsx';
-import { useDispatch, useSelector } from 'react-redux';
+import React from "react";
+import XLSX from "xlsx";
+import { useDispatch, useSelector } from "react-redux";
 import {
   updateExcelData,
   updateTable,
   uploadTable,
   addToTable,
-} from '../../redux/actions';
+} from "../../redux/actions";
 
 const AddToTableButton = () => {
   const dispatch = useDispatch();
@@ -24,16 +24,16 @@ const AddToTableButton = () => {
 
     const dummyData = [
       {
-        Status: 'dummyData',
-        'Date Submitted': 33000,
-        'Company Name': 'hop hop',
-        'Job Title': 'rabbit',
+        Status: "dummyData",
+        "Date Submitted": 33000,
+        "Company Name": "hop hop",
+        "Job Title": "rabbit",
       },
       {
-        Status: 'dummyData',
-        'Date Submitted': 33000,
-        'Company Name': 'hop hop',
-        'Job Title': 'rabbit',
+        Status: "dummyData",
+        "Date Submitted": 33000,
+        "Company Name": "hop hop",
+        "Job Title": "rabbit",
       },
     ];
 
