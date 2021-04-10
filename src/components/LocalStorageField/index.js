@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import '../styles.css';
-import { ClearButton, SaveButton, FetchLocalStorageButton } from './buttons';
-import LocalStorageDisplay from './LocalStorageDisplay';
-import { localStorageObjectTemplate } from '../../helpers';
-import { fetchLocalStorage } from '../../helpers/functions';
+import React, { useState, useEffect } from "react";
+import "../styles.css";
+import { ClearButton, SaveButton, FetchLocalStorageButton } from "./buttons";
+import LocalStorageDisplay from "./LocalStorageDisplay";
+import { localStorageObjectTemplate } from "../../helpers";
+import { fetchLocalStorage } from "../../helpers/functions";
 
 const LocalStorageField = () => {
   const [localObject, setLocalObject] = useState(fetchLocalStorage());
@@ -21,7 +21,7 @@ const LocalStorageField = () => {
 
   // const object = { coffeeZ: 'cup', chicken: 'eggsf', number: 33 };
   // const object = localObject;
-  // localStorage.setItem('Palaver', JSON.stringify(object));
+  // localStorage.setItem('Palaver', JSON.stringify(object)); to be deleted
 
   return (
     <div className="localStorageField">
