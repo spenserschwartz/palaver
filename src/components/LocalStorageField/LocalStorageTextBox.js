@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { displayName } from '../../helpers/functions';
-import CopyButton from '../../helpers/components/CopyButton';
-import './styles.css';
+import React, { useState, useEffect } from "react";
+import { displayName } from "../../helpers/functions";
+import CopyButton from "../../helpers/components/CopyButton";
+import "./styles.css";
 
 const LocalStorageTextBox = ({ localObjectKey, localObject }) => {
-  const [input, updateInput] = useState('');
-  const textBoxID = 'localStorageTextBox' + localObjectKey;
+  const [input, updateInput] = useState("");
+  const textBoxID = "localStorageTextBox" + localObjectKey;
 
-  // Async to display the current localStorage values in text box
-  // Also used to not refresh when Generate button is clicked
   useEffect(() => {
     updateInput(localObject[localObjectKey]);
   }, [localObject, localObjectKey]);
